@@ -10,19 +10,30 @@ export const createClientSteps = (orgNumber: string, isSubmitted: boolean): Pilo
     content: (
       <div className="space-y-4">
         <p>Configure client settings and deployment options:</p>
-        <a 
-          href={isSubmitted ? getUrl(orgNumber, PATHS.clientSetup) : '#'}
-          className={`text-blue-600 hover:underline ${!isSubmitted && 'pointer-events-none opacity-50'}`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Client Setup Configuration
-        </a>
+        <div className="space-y-2">
+          <a 
+            href={isSubmitted ? getUrl(orgNumber, PATHS.clientSetup) : '#'}
+            className={`text-blue-600 hover:underline block ${!isSubmitted && 'pointer-events-none opacity-50'}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Client Setup Configuration
+          </a>
+          <a 
+            href={isSubmitted ? `https://dashboard.sse.cisco.com/org/${orgNumber}/resources/roamingdevices` : '#'}
+            className={`text-blue-600 hover:underline block ${!isSubmitted && 'pointer-events-none opacity-50'}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Verify Roaming Device Registration
+          </a>
+        </div>
         <div className="mt-4">
           <h4 className="font-medium mb-2">Required Actions:</h4>
           <ul className="list-disc list-inside space-y-2">
             <li>Download client installer</li>
             <li>Configure client settings</li>
+            <li>Verify roaming device registration</li>
             <li>Test client deployment</li>
           </ul>
         </div>
