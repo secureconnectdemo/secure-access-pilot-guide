@@ -44,7 +44,25 @@ export const createAccessSteps = (orgNumber: string, isSubmitted: boolean): Pilo
                 2. Configure Bypass Domains
                 <ul className="ml-4 mt-1 space-y-1">
                   <li>• Add internal domains (e.g., *.corp.com)</li>
-                  <li>• Include private IP ranges (e.g., 192.168.0.0/16)</li>
+                  <li>
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger>
+                          <span className="underline text-blue-600 cursor-pointer">About Internet Security Bypass</span>
+                        </TooltipTrigger>
+                        <TooltipContent className="max-w-sm">
+                          <p>
+                            Internet security bypass is supported on user devices with the Cisco Secure Client (formerly known as AnyConnect) deployed or browsers in the environment with a configured Secure Access or custom PAC file. User devices must have the Cisco Secure Client deployed with the Umbrella Roaming Security module.
+                          </p>
+                          <p className="mt-2">
+                            If you bypass internet security in Secure Access, DNS requests for the destinations bypass the Secure Access DNS servers and Secure Web Gateway. The organization's local DNS servers resolve the DNS requests.<br />
+                            If you bypass the Secure Web Gateway in Secure Access, Secure Access DNS servers resolve the DNS requests.
+                          </p>
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </li>
+                  {/* Removed the private IP ranges bullet as requested */}
                   <li>• Add trusted cloud services if needed</li>
                 </ul>
               </li>
