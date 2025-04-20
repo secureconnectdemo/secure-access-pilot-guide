@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { PilotStep } from '../types';
 import { Tooltip, TooltipProvider, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
@@ -6,7 +7,7 @@ import { Shield, Globe, Check } from "lucide-react";
 export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean): PilotStep[] => [
   {
     id: 'config-1',
-    title: '5.1. Advanced Threat Protection',
+    title: '5. Advanced Threat Protection',
     content: (
       <div className="space-y-8">
         {/* 1. File Inspection & Malware Sandboxing */}
@@ -135,7 +136,6 @@ export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean
       </div>
     ),
   },
-  // Updated Content Filtering (Acceptable Use Policies) & Geolocation Blocking in same design
   {
     id: 'config-2',
     title: '6. Content Filtering (Acceptable Use Policies)',
@@ -263,3 +263,4 @@ export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean
     )
   }
 ];
+
