@@ -9,8 +9,7 @@ export const createVerificationSteps = (orgNumber: string, isSubmitted: boolean)
     title: '3. Connection Verification and Reporting',
     content: (
       <div className="space-y-7">
-        <h4 className="font-semibold text-green-700 text-lg">Connection Verification & Reporting</h4>
-
+        {/* Removed duplicated heading here */}
         <div>
           <h5 className="font-medium mb-1">1. Connection Testing</h5>
           <ul className="ml-5 list-disc text-sm text-gray-700 space-y-2">
