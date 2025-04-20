@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { PilotStep } from '../types';
 import { Tooltip, TooltipProvider, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
@@ -13,7 +14,6 @@ export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean
           <li>
             <span className="font-medium">Recommended for early threat awareness and incident response validation.</span>
           </li>
-          {/* All dashboard-link steps moved to Phase 4 */}
           <li>
             <span className="text-gray-500">See the previous phase for core configuration tasks: SWG, HTTPS Inspection, and Do Not Decrypt List settings.</span>
           </li>
