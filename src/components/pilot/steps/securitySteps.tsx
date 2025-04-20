@@ -10,7 +10,7 @@ export const createSecuritySteps = (orgNumber: string, isSubmitted: boolean): Pi
     title: '4. Configure DNS and Web Security Settings',
     content: (
       <div className="space-y-4">
-        <h4 className="font-semibold text-blue-900 text-lg">Configure DNS and Web Security Settings</h4>
+        {/* Removed duplicated heading here */}
         <p>Configure DNS and web security settings for the Cisco Secure Client.</p>
         <div className="flex items-center gap-1">
           <span className="text-xs text-gray-700">Note: The Secure Access DNS-layer security is always enabled on the Cisco Secure Client.</span>
