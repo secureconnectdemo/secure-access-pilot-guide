@@ -12,6 +12,10 @@ export const createAccessSteps = (orgNumber: string, isSubmitted: boolean): Pilo
     content: (
       <div className="space-y-5">
         <CardSection title="Access the Secure Access Dashboard">
+          <p className="mb-3 text-gray-700 text-sm">
+            As you move through the next steps, we’ll provide direct links that point to specific locations within your own Secure Access dashboard—based on the Org ID you entered.<br />
+            To ensure smooth navigation and a seamless experience, make sure you&apos;re already logged into the Secure Access dashboard. This will take you directly to the right configuration pages without needing to search manually.
+          </p>
           <a 
             href={isSubmitted ? getUrl(orgNumber, PATHS.overview) : '#'}
             className={`text-blue-600 hover:underline block ${!isSubmitted && 'pointer-events-none opacity-50'}`}
