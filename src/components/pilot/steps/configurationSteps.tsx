@@ -12,7 +12,7 @@ export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean
         <p>Complete advanced configuration settings:</p>
         <div className="space-y-2">
           <a 
-            href={isSubmitted ? getUrl(orgNumber, PATHS.trafficSteering) : '#'}
+            href={isSubmitted ? `https://dashboard.sse.cisco.com/org/${orgNumber}/connect/user-connectivity/internet-security` : '#'}
             className={`text-blue-600 hover:underline block ${!isSubmitted && 'pointer-events-none opacity-50'}`}
             target="_blank"
             rel="noopener noreferrer"
