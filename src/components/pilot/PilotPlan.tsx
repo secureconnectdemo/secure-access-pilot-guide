@@ -90,17 +90,43 @@ const PilotPlan = () => {
                 <AlertTitle className="text-amber-800">Organization Number Required</AlertTitle>
                 <AlertDescription className="text-amber-700">
                   Please enter your organization number to activate dashboard links and export options.
-                  <br />
-                  <details className="mt-2 cursor-pointer text-sm underline underline-offset-2 decoration-amber-600">
-                    <summary className="font-semibold">More details for Org ID Sign-in</summary>
-                    <ul className="list-disc ml-5 mt-1 space-y-1 text-xs text-amber-900">
-                      <li>If you are familiar with the Org ID # Sign in to Secure Access.</li>
-                      <li>Check the URL in the browser's address bar: <code className="bg-amber-100 px-1 rounded">https://dashboard.sse.com/o/&lt;orgId&gt;/#/&lt;page&gt;</code> where orgId is your unique Secure Access organization ID.</li>
-                      <li>Navigate to the name of your user account, and expand your username to view the organizations where the username is a member. Confirm that you are signed in to the correct Secure Access organization. Your organization name is listed under your account name.</li>
-                      <li>Click <span className="font-semibold">Switch Organizations</span> to change to another Secure Access organization.</li>
-                      <li>Locate <span className="font-semibold">System Status</span>—the overall health status of Secure Access.</li>
-                    </ul>
-                  </details>
+                  <div className="mt-2">
+                    <details className="group">
+                      <summary className="flex items-center text-base font-semibold cursor-pointer bg-[#f3f7fd] hover:bg-[#e8f0fa] px-3 py-2 rounded border border-[#c6d4eb] text-[#163261] group-open:rounded-b-none transition">
+                        <span className="mr-2">&#9432;</span>
+                        More details for Org ID Sign-in
+                      </summary>
+                      <div className="border-l-4 border-[#003366] px-4 py-3 bg-[#f7faff] text-sm rounded-b-lg shadow-sm space-y-2 mt-0">
+                        <ul className="list-disc ml-6 space-y-2 text-[#212529]">
+                          <li>
+                            <span className="font-medium">If you know your Org ID,</span>{" "}
+                            <span>sign in to Secure Access first.</span>
+                          </li>
+                          <li>
+                            <span className="font-medium">Check the URL:</span>{" "}
+                            <span>
+                              <code className="bg-[#eaeafc] text-[#003366] px-1 rounded border border-[#ccd3f2]">https://dashboard.sse.com/o/&lt;orgId&gt;/#/&lt;page&gt;</code>
+                            </span>
+                          </li>
+                          <li>
+                            In the dashboard, click your user account name (top right), then{" "}
+                            <span className="font-medium underline underline-offset-2 decoration-blue-800">expand your username</span>{" "}
+                            to view all organizations you belong to.
+                          </li>
+                          <li>
+                            Confirm you are signed in to the <span className="font-medium">correct organization</span>. Your org name will appear below your account.
+                          </li>
+                          <li>
+                            To switch organizations, click{" "}
+                            <span className="font-semibold underline underline-offset-2 decoration-blue-800">Switch Organizations</span>.
+                          </li>
+                          <li>
+                            Review <span className="font-semibold">System Status</span>{" "}for Secure Access health (found in your dashboard).
+                          </li>
+                        </ul>
+                      </div>
+                    </details>
+                  </div>
                 </AlertDescription>
               </Alert>
             )}
@@ -122,7 +148,30 @@ const PilotPlan = () => {
             </div>
           )}
         </div>
-
+        {/* Guidance section before the dashboard links */}
+        <div className="mb-4 rounded-lg bg-[#e6f1fc] border border-[#b0ceed] px-5 py-3 text-[#13457b]">
+          <p className="font-medium mb-1">
+            As you move through the next steps, we’ll provide direct links that point to specific locations within your own Secure Access dashboard—based on the Org ID you entered.
+          </p>
+          <p className="text-sm mb-2">
+            To ensure smooth navigation and a seamless experience, make sure you&apos;re already logged into the Secure Access dashboard in another tab or window. This will take you directly to the right configuration pages without needing to search manually.
+          </p>
+          <div className="flex items-center gap-2 text-[#003366] bg-[#e2eaff] border border-[#d6e2fa] rounded px-3 py-2 text-[15px]">
+            <FileText size={18} className="mr-1" />
+            <span className="font-medium">
+              Access the Secure Access Dashboard here:{' '}
+              <a
+                href="https://dashboard.sse.cisco.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-700 underline hover:text-blue-900"
+              >
+                https://dashboard.sse.cisco.com
+              </a>
+            </span>
+          </div>
+        </div>
+        {/* End guidance section */}
         <form onSubmit={handleSubmit} className="flex flex-wrap gap-4 items-center mb-4">
           <Input
             type="text"
