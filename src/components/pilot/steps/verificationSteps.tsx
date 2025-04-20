@@ -2,16 +2,15 @@
 import React from 'react';
 import { PilotStep } from '../types';
 import { getUrl, PATHS, TEST_POLICY_URL, MALWARE_TEST_DOMAINS } from '../urlUtils';
+import CardSection from "./CardSection";
 
 export const createVerificationSteps = (orgNumber: string, isSubmitted: boolean): PilotStep[] => [
   {
     id: 'verify-1',
     title: '3. Connection Verification and Reporting',
     content: (
-      <div className="space-y-7">
-        {/* Removed duplicated heading here */}
-        <div>
-          <h5 className="font-medium mb-1">1. Connection Testing</h5>
+      <div className="space-y-5">
+        <CardSection title="Connection Testing">
           <ul className="ml-5 list-disc text-sm text-gray-700 space-y-2">
             <li>Verify that Secure Access is working correctly:</li>
             <li>
@@ -29,10 +28,8 @@ export const createVerificationSteps = (orgNumber: string, isSubmitted: boolean)
               <div className="ml-1 text-xs text-gray-500">Confirms policy enforcement and the Secure Access tunnel is active.</div>
             </li>
           </ul>
-        </div>
-
-        <div>
-          <h5 className="font-medium mb-1">2. Test Traffic Generation</h5>
+        </CardSection>
+        <CardSection title="Test Traffic Generation">
           <ul className="ml-5 list-disc text-sm text-gray-700 space-y-2">
             <li>Use safe, simulated test domains to trigger threat detections:</li>
             <li>
@@ -63,10 +60,8 @@ export const createVerificationSteps = (orgNumber: string, isSubmitted: boolean)
               <div className="ml-1 text-xs text-gray-500">This domain is flagged by Secure Access to validate threat protection.</div>
             </li>
           </ul>
-        </div>
-
-        <div>
-          <h5 className="font-medium mb-1">3. Activity Monitoring</h5>
+        </CardSection>
+        <CardSection title="Activity Monitoring">
           <ul className="ml-5 list-disc text-sm text-gray-700 space-y-1">
             <li>
               Navigate to the{' '}
@@ -83,10 +78,8 @@ export const createVerificationSteps = (orgNumber: string, isSubmitted: boolean)
             <li>Check if policy actions (e.g., block, warn, allow) are applied correctly.</li>
             <li>Validate which rules triggered the response.</li>
           </ul>
-        </div>
-
-        <div>
-          <h5 className="font-medium mb-1">4. Threat Activity Reporting</h5>
+        </CardSection>
+        <CardSection title="Threat Activity Reporting">
           <div className="mb-1 ml-1">
             <span className="font-medium">Automate threat visibility and share updates with your team:</span>
           </div>
@@ -124,7 +117,7 @@ export const createVerificationSteps = (orgNumber: string, isSubmitted: boolean)
             </li>
             <li>Share key insights with internal security or IT teams.</li>
           </ul>
-        </div>
+        </CardSection>
       </div>
     )
   }
