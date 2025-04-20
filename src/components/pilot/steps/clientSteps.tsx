@@ -47,6 +47,26 @@ export const createClientSteps = (orgNumber: string, isSubmitted: boolean): Pilo
         </div>
 
         <div className="mb-6">
+          <h4 className="font-medium mb-3">Client Setup Execution:</h4>
+          <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+            <p className="text-sm text-gray-700 mb-3">
+              After downloading the Secure Client package:
+            </p>
+            <ol className="text-sm text-gray-600 ml-4 list-decimal space-y-2">
+              <li>Locate the downloaded Secure Client package</li>
+              <li>Run the <code className="bg-gray-200 px-1 rounded">Secure Client Setup.exe</code></li>
+              <li>Follow the installation wizard carefully
+                <ul className="ml-4 list-disc">
+                  <li>The wizard will guide you through installing the required agents</li>
+                  <li>Pay attention to each configuration step</li>
+                  <li>Ensure all necessary components are selected</li>
+                </ul>
+              </li>
+            </ol>
+          </div>
+        </div>
+
+        <div className="mb-6">
           <h4 className="font-medium mb-3">Root Certificate Installation:</h4>
           <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
             <p className="text-sm text-gray-700 mb-3">
