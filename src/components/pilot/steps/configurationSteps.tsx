@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { PilotStep } from '../types';
 
@@ -23,7 +22,19 @@ export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean
             <div className="font-bold mb-1">Steps:</div>
             <ol className="list-decimal ml-6 mt-1 space-y-1">
               <li>
-                Go to <span className="font-medium">Security Profiles → File Inspection</span>
+                Go to <span className="font-medium">Security Profiles → File Inspection</span>{" "}
+                {isSubmitted ? (
+                  <a
+                    href={`https://dashboard.sse.cisco.com/org/${orgNumber}/secure/securityprofiles`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline ml-1"
+                  >
+                    (Open Dashboard)
+                  </a>
+                ) : (
+                  <span className="text-gray-400 ml-1">(Dashboard link locked)</span>
+                )}
               </li>
               <li>
                 Enable <span className="font-medium">Malware Analytics (Sandboxing)</span>
@@ -205,4 +216,3 @@ export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean
     )
   }
 ];
-
