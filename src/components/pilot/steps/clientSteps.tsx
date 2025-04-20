@@ -1,106 +1,44 @@
-
 import React from 'react';
 import { PilotStep } from '../types';
+import { getUrl, PATHS } from '../urlUtils';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Info, AlertTriangle } from "lucide-react";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+import { Info } from "lucide-react";
 
 export const createClientSteps = (orgNumber: string, isSubmitted: boolean): PilotStep[] => [
   {
     id: 'client-1',
-    title: '2. Client Configuration',
+    title: '2. Cisco Secure Client Configuration',
     content: (
       <div className="space-y-4">
-        <p className="mb-4">Configure Cisco Secure Client installation and settings:</p>
-        
-        <div className="space-y-6">
-          <ol className="list-decimal space-y-6 ml-4">
-            <li>
-              <h4 className="font-medium mb-2">Access Client Installation</h4>
-              <ul className="list-disc ml-6 space-y-1 text-sm text-gray-600">
-                <li>Log in to the Secure Access Dashboard</li>
-                <li>Navigate to Connect &gt; End-User Connectivity</li>
-                <li>Click "Cisco Secure Client" in top-right corner</li>
-              </ul>
-            </li>
-
-            <li>
-              <h4 className="font-medium mb-2">Download Required Components</h4>
-              <ul className="list-disc ml-6 space-y-1 text-sm text-gray-600">
-                <li>Full Cisco Secure Client installer package</li>
-                <li>Internet Security Profile</li>
-                <li>ThousandEyes Profile</li>
-              </ul>
-            </li>
-
-            <li>
-              <h4 className="font-medium mb-2">Configure Installation Files</h4>
-              <Alert className="mb-3 bg-amber-50 border-amber-200">
-                <AlertTriangle className="h-4 w-4 text-amber-600" />
-                <AlertDescription className="text-amber-700">
-                  File paths and names must be exact to avoid installation errors
-                </AlertDescription>
-              </Alert>
-              <ul className="list-disc ml-6 space-y-2 text-sm text-gray-600">
-                <li>Unzip the downloaded package</li>
-                <li>Place configuration files:
-                  <ul className="ml-4 mt-1 space-y-2">
-                    <li className="flex items-center">
-                      <span className="bg-gray-100 px-2 py-1 rounded font-mono text-xs mr-2">Profiles/Umbrella</span>
-                      - Copy OrgInfo.json here
-                    </li>
-                    <li className="flex items-center">
-                      <span className="bg-gray-100 px-2 py-1 rounded font-mono text-xs mr-2">Profiles/ThousandEyes</span>
-                      - Place ThousandEyes config file here
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-
-            <li>
-              <h4 className="font-medium mb-2 flex items-center gap-2">
-                Required Modules Selection
-                <TooltipProvider>
-                  <Tooltip>
-                    <TooltipTrigger>
-                      <Info className="h-4 w-4 text-blue-500" />
-                    </TooltipTrigger>
-                    <TooltipContent className="max-w-xs">
-                      <p className="font-normal">
-                        These modules enable:
-                        <ul className="list-disc pl-4 mt-1">
-                          <li>System diagnostics (DART)</li>
-                          <li>DNS-layer security (Umbrella)</li>
-                          <li>Experience monitoring (ThousandEyes)</li>
-                        </ul>
-                      </p>
-                    </TooltipContent>
-                  </Tooltip>
-                </TooltipProvider>
-              </h4>
-              <ul className="list-disc ml-6 space-y-1 text-sm text-gray-600">
-                <li>DART (for diagnostics)</li>
-                <li>Umbrella (for security)</li>
-                <li>ThousandEyes (for monitoring)</li>
-              </ul>
-            </li>
-
-            <li>
-              <h4 className="font-medium mb-2">Run Installation</h4>
-              <ul className="list-disc ml-6 space-y-2 text-sm text-gray-600">
-                <li>Find <code className="bg-gray-100 px-2 py-0.5 rounded">Secure Client Setup.exe</code> in the unzipped package</li>
-                <li>Right-click and select "Run as Administrator"</li>
-                <li>Follow the installation wizard:
-                  <ul className="ml-4 mt-1 list-disc">
-                    <li>Progress through each screen carefully</li>
-                    <li>Ensure all required modules are selected</li>
-                    <li>Complete the installation (no reboot needed)</li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ol>
+        <div className="mb-6">
+          <h4 className="font-medium mb-3 flex items-center gap-2">
+            Configure DNS and Web Security Settings
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Info className="h-4 w-4 text-blue-500" />
+                </TooltipTrigger>
+                <TooltipContent className="max-w-xs">
+                  <div className="space-y-2 text-sm">
+                    <p>The Cisco Secure Client with the Umbrella Roaming Security module steers web traffic on ports 80/443 to the Secure Web Gateway (SWG). All web traffic is evaluated against the organization's policy and Internet Access rules when a VPN connection is not established.</p>
+                    <p className="mt-2 font-semibold">Note: You can override this option on individual roaming devices.</p>
+                  </div>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </h4>
+          
+          <div className="space-y-2">
+            <a 
+              href={isSubmitted ? getUrl(orgNumber, PATHS.endUserConnectivity) : '#'}
+              className={`text-blue-600 hover:underline block ${!isSubmitted && 'pointer-events-none opacity-50'}`}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Cisco Secure Client Settings
+            </a>
+            <p className="text-sm text-gray-600 ml-4">• Configure DNS and Web Security</p>
+          </div>
         </div>
       </div>
     )
