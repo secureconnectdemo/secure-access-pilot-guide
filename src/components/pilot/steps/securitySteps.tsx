@@ -10,7 +10,6 @@ export const createSecuritySteps = (orgNumber: string, isSubmitted: boolean): Pi
     title: '4. Configure DNS and Web Security Settings',
     content: (
       <div className="space-y-4">
-        {/* Removed duplicated heading here */}
         <p>Configure DNS and web security settings for the Cisco Secure Client.</p>
         <div className="flex items-center gap-1">
           <span className="text-xs text-gray-700">Note: The Secure Access DNS-layer security is always enabled on the Cisco Secure Client.</span>
@@ -41,38 +40,24 @@ export const createSecuritySteps = (orgNumber: string, isSubmitted: boolean): Pi
             <Tooltip>
               <TooltipTrigger>
                 <a
+                  id="configure-swg"
                   href={isSubmitted ? `https://dashboard.sse.cisco.com/org/${orgNumber}/connect/user-connectivity/internet-security` : '#'}
-                  className={`text-blue-600 hover:underline block mt-2 ${!isSubmitted ? 'pointer-events-none opacity-50' : ''}`}
+                  className={`text-blue-600 hover:underline block mt-2 font-semibold ${!isSubmitted ? 'pointer-events-none opacity-50' : ''}`}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Download Cisco Secure Client
+                  Configure Cisco Secure Client Settings - Enable SWG (Full Proxy)
                 </a>
               </TooltipTrigger>
               <TooltipContent className="max-w-xs">
-                <p>The Cisco Secure Client protects computers, on and off the network.</p>
+                <p>
+                  The Cisco Secure Client protects computers, on and off the network.
+                </p>
               </TooltipContent>
             </Tooltip>
           </TooltipProvider>
-          <a 
-            href={isSubmitted ? `https://dashboard.sse.cisco.com/org/${orgNumber}/connect/user-connectivity/internet-security` : '#'}
-            className={`text-blue-600 hover:underline block mt-2 font-semibold ${!isSubmitted ? 'pointer-events-none opacity-50' : ''}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Configure Cisco Secure Client Settings - Enable SWG (Full Proxy)
-          </a>
-          <a 
-            href={isSubmitted ? `https://dashboard.sse.cisco.com/org/${orgNumber}/connect/user-connectivity/internet-security` : '#'}
-            className={`text-blue-600 hover:underline block mt-2`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Go to Traffic Steering / SWG (Full Proxy) Dashboard
-          </a>
         </div>
       </div>
     )
   }
 ];
-
