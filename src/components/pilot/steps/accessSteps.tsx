@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { PilotStep } from '../types';
 import { getUrl, PATHS } from '../urlUtils';
@@ -176,4 +175,3 @@ export const createAccessSteps = (orgNumber: string, isSubmitted: boolean): Pilo
     )
   }
 ];
-
