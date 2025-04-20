@@ -1,34 +1,23 @@
 
 import React from 'react';
 import { PilotStep } from '../types';
-import { Tooltip, TooltipProvider, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import { Shield, Check, FileText } from "lucide-react";
+import PilotStepCard from '../PilotStepCard';
+import { Check, FileText, Shield } from "lucide-react";
 
 export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean): PilotStep[] => [
   {
     id: 'config-1',
     title: '5. Advanced Threat Protection',
     content: (
-      <div className="space-y-8">
-        {/* 1. File Inspection & Malware Sandboxing */}
-        <div>
-          <h3 className="font-semibold text-base mb-1 flex gap-1 items-center text-[#003366]">
-            <span className="text-xl font-bold mr-1">🧬 1. File Inspection &amp; Malware Sandboxing</span>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <span>
-                    <Shield className="inline-block h-4 w-4 text-violet-600 cursor-pointer" />
-                  </span>
-                </TooltipTrigger>
-                <TooltipContent className="max-w-xs">
-                  <b>Purpose:</b>
-                  <p>Detect and block malicious files in real time using advanced static and dynamic analysis.</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </h3>
-          {/* Steps card */}
+      <PilotStepCard
+        icon={<Shield className="text-violet-600 w-7 h-7" />}
+        title="Advanced Threat Protection"
+      >
+        {/* File Inspection & Malware Sandboxing Section */}
+        <div className="space-y-2">
+          <div className="text-base font-bold flex items-center gap-1 text-[#003366]">
+            🧬 File Inspection &amp; Malware Sandboxing
+          </div>
           <div className="mb-2 mt-1 px-5 py-3 rounded border text-sm bg-[#efebfa] border-[#c8bfff]">
             <div className="font-medium mb-1 flex items-center gap-1 text-green-600">
               <Check className="inline-block h-4 w-4" /> Steps:
@@ -66,33 +55,22 @@ export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean
             </span>
           </div>
         </div>
-      </div>
+      </PilotStepCard>
     ),
   },
   {
     id: 'config-2',
     title: '6. Remote Browser Isolation (RBI)',
     content: (
-      <div className="space-y-8">
-        {/* 2. Remote Browser Isolation (RBI) */}
-        <div>
-          <h3 className="font-semibold text-base mb-1 flex gap-1 items-center text-[#003366]">
-            <span className="text-xl font-bold mr-1">🧪 2. Remote Browser Isolation (RBI)</span>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <span>
-                    <Shield className="inline-block h-4 w-4 text-sky-600 cursor-pointer" />
-                  </span>
-                </TooltipTrigger>
-                <TooltipContent className="max-w-xs">
-                  <b>Purpose:</b>
-                  <p>Allow users to safely visit unknown or high-risk websites by isolating content in a secure remote container.</p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </h3>
-          {/* Steps card */}
+      <PilotStepCard
+        icon={<Shield className="text-sky-600 w-7 h-7" />}
+        title="Remote Browser Isolation (RBI)"
+      >
+        {/* Remote Browser Isolation */}
+        <div className="space-y-2">
+          <div className="text-base font-bold flex items-center gap-1 text-[#003366]">
+            🧪 Remote Browser Isolation (RBI)
+          </div>
           <div className="mb-2 mt-1 px-5 py-3 rounded border text-sm bg-[#eaf6ff] border-[#bae0fa]">
             <div className="font-medium mb-1 flex items-center gap-1 text-green-600">
               <Check className="inline-block h-4 w-4" /> Steps:
@@ -123,7 +101,7 @@ export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean
             </span>
           </div>
         </div>
-      </div>
+      </PilotStepCard>
     ),
   }
 ];
