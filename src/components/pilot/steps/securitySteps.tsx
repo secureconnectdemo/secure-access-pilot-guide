@@ -112,6 +112,10 @@ export const createSecuritySteps = (orgNumber: string, isSubmitted: boolean): Pi
                   <p>
                     Automatically skips decryption for sensitive destinations like banking and healthcare sites.
                   </p>
+                  <p className="mt-2 text-sm font-semibold">Note:</p>
+                  <p>
+                    Traffic that is not decrypted cannot be effectively inspected for threats. However, to comply with confidentiality regulations in some locations, certain traffic must not be decrypted. Use the Do Not Decrypt lists to specify these destinations.
+                  </p>
                 </TooltipContent>
               </Tooltip>
             </TooltipProvider>
