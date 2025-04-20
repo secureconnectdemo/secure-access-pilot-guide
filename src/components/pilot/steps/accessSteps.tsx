@@ -48,20 +48,50 @@ export const createAccessSteps = (orgNumber: string, isSubmitted: boolean): Pilo
               Download Root Certificate
             </a>
             
-            <div className="mt-3 bg-gray-50 p-4 rounded-lg border border-gray-200">
-              <p className="font-medium mb-2">Installation Steps using MMC:</p>
+            <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+              <p className="text-sm text-gray-700 mb-3">
+                Root certificates are crucial for:
+                <ul className="list-disc ml-5 mt-1">
+                  <li>Decrypting and inspecting network traffic</li>
+                  <li>Displaying block and warning notifications</li>
+                  <li>Enabling secure, transparent internet access</li>
+                </ul>
+              </p>
+              
+              <div className="mb-4">
+                <video 
+                  src="https://raw.githubusercontent.com/secureconnectdemo/images-and-giff/refs/heads/main/Cert.mp4" 
+                  controls 
+                  className="w-full rounded-lg shadow-md"
+                  preload="metadata"
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+              
+              <h5 className="font-medium mb-2">Installation Steps:</h5>
               <ol className="text-sm text-gray-600 ml-4 list-decimal space-y-2">
-                <li>Open Microsoft Management Console (run "mmc.exe")</li>
-                <li>Go to File &gt; Add/Remove Snap-in</li>
-                <li>Select "Certificates" and click "Add"</li>
-                <li>Choose "Computer account" &gt; "Local computer" &gt; "Finish"</li>
-                <li>Navigate to "Certificates (Local Computer) &gt; Trusted Root Certification Authorities &gt; Certificates"</li>
+                <li>Open Microsoft Management Console (MMC):
+                  <ul className="ml-4 list-disc">
+                    <li>Press Windows key + R</li>
+                    <li>Type "mmc" and press Enter</li>
+                  </ul>
+                </li>
+                <li>Add Certificates Snap-in:
+                  <ul className="ml-4 list-disc">
+                    <li>Go to File &gt; Add/Remove Snap-in</li>
+                    <li>Select "Certificates"</li>
+                    <li>Choose "Computer account"</li>
+                    <li>Select "Local computer"</li>
+                  </ul>
+                </li>
+                <li>Navigate to Trusted Root Certification Authorities</li>
                 <li>Right-click &gt; "All Tasks" &gt; "Import"</li>
-                <li>Follow the Certificate Import Wizard:
-                  <ul className="ml-4 mt-1 list-disc">
-                    <li>Browse to the downloaded certificate</li>
+                <li>Follow Certificate Import Wizard:
+                  <ul className="ml-4 list-disc">
+                    <li>Browse to downloaded Cisco Secure Access root certificate</li>
                     <li>Select "Place all certificates in the following store"</li>
-                    <li>Verify "Trusted Root Certification Authorities" is selected</li>
+                    <li>Verify "Trusted Root Certification Authorities" store is selected</li>
                     <li>Complete the wizard</li>
                   </ul>
                 </li>
