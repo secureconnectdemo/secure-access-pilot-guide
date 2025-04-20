@@ -1,3 +1,4 @@
+
 import React, { useState, useRef } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -89,6 +90,17 @@ const PilotPlan = () => {
                 <AlertTitle className="text-amber-800">Organization Number Required</AlertTitle>
                 <AlertDescription className="text-amber-700">
                   Please enter your organization number to activate dashboard links and export options.
+                  <br />
+                  <details className="mt-2 cursor-pointer text-sm underline underline-offset-2 decoration-amber-600">
+                    <summary className="font-semibold">More details for Org ID Sign-in</summary>
+                    <ul className="list-disc ml-5 mt-1 space-y-1 text-xs text-amber-900">
+                      <li>If you are familiar with the Org ID # Sign in to Secure Access.</li>
+                      <li>Check the URL in the browser's address bar: <code className="bg-amber-100 px-1 rounded">https://dashboard.sse.com/o/&lt;orgId&gt;/#/&lt;page&gt;</code> where orgId is your unique Secure Access organization ID.</li>
+                      <li>Navigate to the name of your user account, and expand your username to view the organizations where the username is a member. Confirm that you are signed in to the correct Secure Access organization. Your organization name is listed under your account name.</li>
+                      <li>Click <span className="font-semibold">Switch Organizations</span> to change to another Secure Access organization.</li>
+                      <li>Locate <span className="font-semibold">System Status</span>—the overall health status of Secure Access.</li>
+                    </ul>
+                  </details>
                 </AlertDescription>
               </Alert>
             )}
@@ -152,3 +164,4 @@ const PilotPlan = () => {
 };
 
 export default PilotPlan;
+
