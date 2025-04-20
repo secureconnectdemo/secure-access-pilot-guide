@@ -47,7 +47,16 @@ export const createAccessSteps = (orgNumber: string, isSubmitted: boolean): Pilo
             >
               Download Root Certificate
             </a>
-            
+
+            <p className="text-sm text-gray-700 mt-3">
+              Root certificates are crucial for:
+              <ul className="list-disc ml-5 mt-1">
+                <li>Decrypting and inspecting network traffic</li>
+                <li>Displaying block and warning notifications</li>
+                <li>Enabling secure, transparent internet access</li>
+              </ul>
+            </p>
+          
             <div className="mt-4 mb-4">
               <video 
                 src="https://github.com/secureconnectdemo/images-and-giff/raw/refs/heads/main/cert.mp4" 
@@ -63,15 +72,6 @@ export const createAccessSteps = (orgNumber: string, isSubmitted: boolean): Pilo
             </div>
               
             <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
-              <p className="text-sm text-gray-700 mb-3">
-                Root certificates are crucial for:
-                <ul className="list-disc ml-5 mt-1">
-                  <li>Decrypting and inspecting network traffic</li>
-                  <li>Displaying block and warning notifications</li>
-                  <li>Enabling secure, transparent internet access</li>
-                </ul>
-              </p>
-                
               <h5 className="font-medium mb-2">Installation Steps:</h5>
               <ol className="text-sm text-gray-600 ml-4 list-decimal space-y-2">
                 <li>Open Microsoft Management Console (MMC):
