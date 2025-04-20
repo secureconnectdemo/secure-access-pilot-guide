@@ -43,7 +43,7 @@ export const createAccessSteps = (orgNumber: string, isSubmitted: boolean): Pilo
               <li>
                 2. Configure Bypass Domains
                 <ul className="ml-4 mt-1 space-y-1">
-                  <li>• Add internal domains (e.g., *.corp.local)</li>
+                  <li>• Add internal domains (e.g., *.corp.com)</li>
                   <li>• Include private IP ranges (e.g., 192.168.0.0/16)</li>
                   <li>• Add trusted cloud services if needed</li>
                 </ul>
