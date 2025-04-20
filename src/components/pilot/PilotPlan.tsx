@@ -93,16 +93,23 @@ const PilotPlan = () => {
                   <AlertDescription className="text-amber-700 flex items-center gap-1">
                     Please enter your organization number to activate dashboard links and export options.
                     <TooltipProvider>
-                      <Tooltip>
+                      <Tooltip delayDuration={200}>
                         <TooltipTrigger asChild>
                           <Info className="h-4 w-4 text-amber-600 cursor-help" />
                         </TooltipTrigger>
                         <TooltipContent className="max-w-xs text-xs whitespace-pre-wrap bg-amber-50 text-amber-900 border border-amber-300 shadow">
-                          {`If you are familiar with the Org ID # Sign in to Secure Access.
-Check the URL in the browser's address bar: https://dashboard.sse.com/o/<orgId>/#/<page> where orgId is your unique Secure Access organization ID.
-Navigate to the name of your user account, and expand your username to view the organizations where the username is a member. Confirm that you are signed in to the correct Secure Access organization. Your organization name is listed under your account name.
-Click Switch Organizations to change to another Secure Access organization.
-Locate System Status—the overall health status of Secure Access.`}
+                          {`🔹 If you don't know your Org ID
+
+Sign in to Secure Access.
+
+Look at the browser’s address bar:
+https://dashboard.sse.com/org/<orgId>/...
+
+<orgId> is your unique Secure Access organization ID.
+
+Click your user name to confirm which organization you're signed into.
+
+Use Switch Organizations to access others, if applicable.`}
                         </TooltipContent>
                       </Tooltip>
                     </TooltipProvider>
@@ -170,3 +177,4 @@ Locate System Status—the overall health status of Secure Access.`}
 };
 
 export default PilotPlan;
+
