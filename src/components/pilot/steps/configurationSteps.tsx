@@ -2,14 +2,14 @@
 import React from 'react';
 import { PilotStep } from '../types';
 import { Tooltip, TooltipProvider, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import { ShieldCheck, Browser } from "lucide-react";
+import { Shield, Globe } from "lucide-react";
 
 export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean): PilotStep[] => [
   {
     id: 'config-1',
     title: 'Advanced Threat Protection',
     content: (
-      <div className="space-y-6">
+      <div className="space-y-8">
         {/* 1. File Inspection & Malware Sandboxing */}
         <div>
           <h3 className="font-semibold text-base mb-1 flex gap-1 items-center">
@@ -18,7 +18,7 @@ export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean
               <Tooltip>
                 <TooltipTrigger asChild>
                   <span>
-                    <ShieldCheck className="inline-block h-4 w-4 text-violet-500 cursor-pointer" />
+                    <Shield className="inline-block h-4 w-4 text-violet-600 cursor-pointer" />
                   </span>
                 </TooltipTrigger>
                 <TooltipContent className="max-w-xs">
@@ -70,7 +70,7 @@ export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean
               <Tooltip>
                 <TooltipTrigger asChild>
                   <span>
-                    <Browser className="inline-block h-4 w-4 text-sky-500 cursor-pointer" />
+                    <Shield className="inline-block h-4 w-4 text-sky-600 cursor-pointer" />
                   </span>
                 </TooltipTrigger>
                 <TooltipContent className="max-w-xs">
@@ -115,5 +115,121 @@ export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean
         </div>
       </div>
     ),
+  },
+  {
+    id: 'config-2',
+    title: 'Content Filtering (Acceptable Use Policies)',
+    content: (
+      <div className="space-y-8">
+        {/* 3. Content Filtering */}
+        <div>
+          <h3 className="font-semibold text-base mb-1 flex gap-1 items-center">
+            <span role="img" aria-label="Books">📚</span> Content Filtering (Acceptable Use Policies)
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <span>
+                    <Shield className="inline-block h-4 w-4 text-emerald-600 cursor-pointer" />
+                  </span>
+                </TooltipTrigger>
+                <TooltipContent className="max-w-xs">
+                  <b>Purpose:</b>
+                  <p>
+                    Block or allow access based on content categories such as adult sites, gambling, and high-risk platforms.
+                  </p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </h3>
+          <div className="mb-2 mt-1 px-2 py-1 bg-emerald-50 rounded border text-sm border-emerald-100">
+            <b>✅ Steps:</b>
+            <ol className="list-decimal ml-6 mt-1 space-y-1">
+              <li>
+                Go to <span className="font-medium">Dashboard → Policies → Internet Access</span>
+              </li>
+              <li>
+                Click <span className="font-medium">Add Rule</span>
+              </li>
+              <li>
+                Name the rule (e.g., <span className="font-mono bg-gray-100 px-1 rounded">Block Gambling Sites</span>)
+              </li>
+              <li>
+                Set Action to <span className="font-medium">Block</span>
+              </li>
+              <li>
+                In <span className="font-medium">Destination Categories</span>, choose:
+                <ul className="list-disc ml-8 mt-1">
+                  <li>Gambling</li>
+                  <li>Optionally add: Adult, Illegal, High Risk, etc.</li>
+                </ul>
+              </li>
+              <li>
+                Save and apply
+              </li>
+            </ol>
+            <div className="mt-2 text-xs">
+              <b>Test using:</b> <a href="https://777.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">https://777.com</a>
+              <br />
+              <b>✅ Expected:</b> Secure Access block page with:
+              <ul className="list-disc ml-8">
+                <li>Reason: Category: Gambling</li>
+                <li>User info, IP, timestamp</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        {/* 4. Geolocation Blocking */}
+        <div>
+          <h3 className="font-semibold text-base mb-1 flex gap-1 items-center">
+            <span role="img" aria-label="Globe">🌍</span> 4. Geolocation Blocking
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <span>
+                    <Globe className="inline-block h-4 w-4 text-blue-500 cursor-pointer" />
+                  </span>
+                </TooltipTrigger>
+                <TooltipContent className="max-w-xs">
+                  <b>Purpose:</b>
+                  <p>
+                    Prevent access to content hosted in specific countries or regions.
+                  </p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </h3>
+          <div className="mb-2 mt-1 px-2 py-1 bg-blue-50 rounded border text-sm border-blue-100">
+            <b>✅ Steps:</b>
+            <ol className="list-decimal ml-6 mt-1 space-y-1">
+              <li>
+                Go to <span className="font-medium">Policy Dashboard → Internet Access Policy → Add Rule</span>
+              </li>
+              <li>
+                Name the rule (e.g., <span className="font-mono bg-gray-100 px-1 rounded">Geo Block Asia</span>)
+              </li>
+              <li>
+                Set Action to <span className="font-medium">Block</span>
+              </li>
+              <li>
+                Under <span className="font-medium">Destination Categories</span>, choose:
+                <ul className="list-disc ml-8 mt-1">
+                  <li>Geolocation</li>
+                  <li>Then select the region (e.g., Asia)</li>
+                </ul>
+              </li>
+              <li>
+                Save and apply
+              </li>
+            </ol>
+            <div className="mt-2 text-xs">
+              <b>Test with:</b> <a href="https://www.qq.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">https://www.qq.com</a>
+              <br />
+              <b>✅ Expected:</b>
+              Block page explaining the content is blocked due to geographic restrictions.
+            </div>
+          </div>
+        </div>
+      </div>
+    )
   }
 ];
