@@ -151,7 +151,19 @@ export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean
             <div className="font-bold mb-1">Steps:</div>
             <ol className="list-decimal ml-6 mt-1 space-y-1">
               <li>
-                Go to <span className="font-medium">Policy Dashboard → Internet Access Policy → Add Rule</span>
+                Go to <span className="font-medium">Policy Dashboard → Internet Access Policy → Add Rule</span>{" "}
+                {isSubmitted ? (
+                  <a
+                    href={`https://dashboard.sse.cisco.com/org/${orgNumber}/secure/policy`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline ml-1"
+                  >
+                    (Open Dashboard)
+                  </a>
+                ) : (
+                  <span className="text-gray-400 ml-1">(Dashboard link locked)</span>
+                )}
               </li>
               <li>
                 Name the rule (e.g., <span className="font-mono bg-gray-100 px-1 rounded">Geo Block Asia</span>)
@@ -181,3 +193,4 @@ export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean
     )
   }
 ];
+
