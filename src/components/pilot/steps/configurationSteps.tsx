@@ -1,8 +1,15 @@
 
 import React from 'react';
 import { PilotStep } from '../types';
-import { Tooltip, TooltipProvider, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
-import { Shield, Globe, Check } from "lucide-react";
+
+function CardSection({ title, children }: { title: string, children: React.ReactNode }) {
+  return (
+    <section className="mb-4">
+      <div className="font-semibold text-base mb-2 text-gray-900">{title}</div>
+      <div className="rounded border bg-white p-4 text-sm border-gray-200">{children}</div>
+    </section>
+  );
+}
 
 export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean): PilotStep[] => [
   {
@@ -10,31 +17,10 @@ export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean
     title: '5. Advanced Threat Protection',
     content: (
       <div className="space-y-8">
-        {/* 1. File Inspection & Malware Sandboxing */}
-        <div>
-          <h3 className="font-semibold text-base mb-1 flex gap-1 items-center text-[#003366]">
-            🧬 1. File Inspection &amp; Malware Sandboxing
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <span>
-                    <Shield className="inline-block h-4 w-4 text-violet-600 cursor-pointer" />
-                  </span>
-                </TooltipTrigger>
-                <TooltipContent className="max-w-xs">
-                  <b>Purpose:</b>
-                  <p>
-                    Detect and block malicious files in real time using advanced static and dynamic analysis.
-                  </p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </h3>
-          {/* Steps card */}
-          <div className="mb-2 mt-1 px-4 py-2 bg-violet-50 rounded border text-sm border-violet-100">
-            <div className="font-semibold mb-1 flex items-center gap-1">
-              <Check className="inline-block h-4 w-4 text-green-600" /> Steps:
-            </div>
+        {/* File Inspection & Malware Sandboxing */}
+        <CardSection title="1. File Inspection & Malware Sandboxing">
+          <div className="mb-2">
+            <div className="font-bold mb-1">Steps:</div>
             <ol className="list-decimal ml-6 mt-1 space-y-1">
               <li>
                 Go to <span className="font-medium">Security Profiles → File Inspection</span>
@@ -53,51 +39,22 @@ export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean
               </li>
             </ol>
           </div>
-          {/* How it works card */}
-          <div className="mt-2 px-4 py-2 bg-slate-50 rounded border text-sm border-slate-100">
-            <div className="font-semibold mb-1 flex gap-1 items-center">
-              🧪 How It Works:
-            </div>
+          <div className="mt-4">
+            <div className="font-bold mb-1">How It Works:</div>
             <ul className="list-disc ml-5 mt-1">
               <li>Files are analyzed using both static (signatures, heuristics) and dynamic (sandbox execution) techniques</li>
               <li>Verdicts returned: <b>Clean</b>, <b>Malicious</b>, or <b>Suspicious</b></li>
               <li>Malicious files are blocked automatically</li>
             </ul>
-            <span className="block mt-2">
-              <span className="inline-flex items-center gap-1 font-semibold">
-                <Check className="inline-block h-4 w-4 text-green-600" /> Test Tip:
-              </span>
-              Download <a href="https://www.eicar.org/download-anti-malware-testfile/"
-                target="_blank" rel="noopener noreferrer"
-                className="text-blue-600 hover:underline">EICAR test file</a> to validate functionality.
-            </span>
-          </div>
-        </div>
-        {/* 2. Remote Browser Isolation (RBI) */}
-        <div>
-          <h3 className="font-semibold text-base mb-1 flex gap-1 items-center text-[#003366]">
-            🧪 2. Remote Browser Isolation (RBI)
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <span>
-                    <Shield className="inline-block h-4 w-4 text-sky-600 cursor-pointer" />
-                  </span>
-                </TooltipTrigger>
-                <TooltipContent className="max-w-xs">
-                  <b>Purpose:</b>
-                  <p>
-                    Allow users to safely visit unknown or high-risk websites by isolating content in a secure remote container.
-                  </p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </h3>
-          {/* Steps card */}
-          <div className="mb-2 mt-1 px-4 py-2 bg-sky-50 rounded border text-sm border-sky-100">
-            <div className="font-semibold mb-1 flex items-center gap-1">
-              <Check className="inline-block h-4 w-4 text-green-600" /> Steps:
+            <div className="mt-2">
+              <span className="font-bold">Test Tip:</span> Download <a href="https://www.eicar.org/download-anti-malware-testfile/" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">EICAR test file</a> to validate functionality.
             </div>
+          </div>
+        </CardSection>
+        {/* Remote Browser Isolation (RBI) */}
+        <CardSection title="2. Remote Browser Isolation (RBI)">
+          <div className="mb-2">
+            <div className="font-bold mb-1">Steps:</div>
             <ol className="list-decimal ml-6 mt-1 space-y-1">
               <li>
                 Go to <span className="font-medium">Security Profiles → Isolation Rules</span>
@@ -106,7 +63,8 @@ export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean
                 Enable <span className="font-medium">Remote Browser Isolation</span>
               </li>
               <li>
-                Define the trigger:<br />
+                Define the trigger:
+                <br />
                 <span className="block ml-4 text-gray-600">For example: Category = Social Media or Reputation = Unknown</span>
               </li>
               <li>
@@ -117,22 +75,17 @@ export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean
               </li>
             </ol>
           </div>
-          {/* Example test card */}
-          <div className="mt-2 px-4 py-2 bg-slate-50 rounded border text-sm border-slate-100">
-            <div className="font-semibold mb-1 flex gap-1 items-center">
-              🧪 Example Test:
-            </div>
+          <div className="mt-4">
+            <div className="font-bold mb-1">Example Test:</div>
             <span className="block ml-5">
-              Try accessing <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">https://www.linkedin.com</a> or a new/unrated domain.
+              Try accessing <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">https://www.linkedin.com</a> or a new/unrated domain.
             </span>
-            <span className="block mt-2">
-              <span className="inline-flex items-center gap-1 font-semibold">
-                <Check className="inline-block h-4 w-4 text-green-600" /> Expected:
-              </span>
+            <div className="mt-2">
+              <span className="font-bold">Expected:</span>
               Page opens in an isolated browser session, with a security banner and no data reaching the endpoint.
-            </span>
+            </div>
           </div>
-        </div>
+        </CardSection>
       </div>
     ),
   },
@@ -142,30 +95,9 @@ export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean
     content: (
       <div className="space-y-8">
         {/* Content Filtering */}
-        <div>
-          <h3 className="font-semibold text-base mb-1 flex gap-1 items-center text-[#003366]">
-            📚 Content Filtering (Acceptable Use Policies)
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <span>
-                    <Shield className="inline-block h-4 w-4 text-emerald-600 cursor-pointer" />
-                  </span>
-                </TooltipTrigger>
-                <TooltipContent className="max-w-xs">
-                  <b>Purpose:</b>
-                  <p>
-                    Block or allow access based on content categories such as adult sites, gambling, and high-risk platforms.
-                  </p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </h3>
-          {/* Steps card */}
-          <div className="mb-2 mt-1 px-4 py-2 bg-emerald-50 rounded border text-sm border-emerald-100">
-            <div className="font-semibold mb-1 flex items-center gap-1">
-              <Check className="inline-block h-4 w-4 text-green-600" /> Steps:
-            </div>
+        <CardSection title="Content Filtering (Acceptable Use Policies)">
+          <div className="mb-2">
+            <div className="font-bold mb-1">Steps:</div>
             <ol className="list-decimal ml-6 mt-1 space-y-1">
               <li>
                 Go to <span className="font-medium">Dashboard → Policies → Internet Access</span>
@@ -191,43 +123,20 @@ export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean
               </li>
             </ol>
             <div className="mt-2 text-xs">
-              <b>Test using:</b> <a href="https://777.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">https://777.com</a>
+              <span className="font-bold">Test using:</span> <a href="https://777.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">https://777.com</a>
               <br />
-              <span className="inline-flex items-center gap-1 font-semibold">
-                <Check className="inline-block h-4 w-4 text-green-600" /> Expected:
-              </span> Secure Access block page with:
+              <span className="font-bold">Expected:</span> Secure Access block page with:
               <ul className="list-disc ml-8">
                 <li>Reason: Category: Gambling</li>
                 <li>User info, IP, timestamp</li>
               </ul>
             </div>
           </div>
-        </div>
+        </CardSection>
         {/* Geolocation Blocking */}
-        <div>
-          <h3 className="font-semibold text-base mb-1 flex gap-1 items-center text-[#003366]">
-            🌍 Geolocation Blocking
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <span>
-                    <Globe className="inline-block h-4 w-4 text-blue-500 cursor-pointer" />
-                  </span>
-                </TooltipTrigger>
-                <TooltipContent className="max-w-xs">
-                  <b>Purpose:</b>
-                  <p>
-                    Prevent access to content hosted in specific countries or regions.
-                  </p>
-                </TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </h3>
-          {/* Steps card */}
-          <div className="mb-2 mt-1 px-4 py-2 bg-blue-50 rounded border text-sm border-blue-100">
-            <div className="font-semibold mb-1 flex items-center gap-1">
-              <Check className="inline-block h-4 w-4 text-green-600" /> Steps:
-            </div>
+        <CardSection title="Geolocation Blocking">
+          <div className="mb-2">
+            <div className="font-bold mb-1">Steps:</div>
             <ol className="list-decimal ml-6 mt-1 space-y-1">
               <li>
                 Go to <span className="font-medium">Policy Dashboard → Internet Access Policy → Add Rule</span>
@@ -250,17 +159,13 @@ export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean
               </li>
             </ol>
             <div className="mt-2 text-xs">
-              <b>Test with:</b> <a href="https://www.qq.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">https://www.qq.com</a>
+              <span className="font-bold">Test with:</span> <a href="https://www.qq.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">https://www.qq.com</a>
               <br />
-              <span className="inline-flex items-center gap-1 font-semibold">
-                <Check className="inline-block h-4 w-4 text-green-600" /> Expected:
-              </span>
-              Block page explaining the content is blocked due to geographic restrictions.
+              <span className="font-bold">Expected:</span> Block page explaining the content is blocked due to geographic restrictions.
             </div>
           </div>
-        </div>
+        </CardSection>
       </div>
     )
   }
 ];
-

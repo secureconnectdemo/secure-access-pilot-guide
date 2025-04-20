@@ -6,11 +6,7 @@ import StepBlock from "./StepBlock";
 export const createSecuritySteps = (orgNumber: string, isSubmitted: boolean): PilotStep[] => [
   {
     id: "security-1",
-    title: (
-      <span className="text-lg font-bold text-gray-800 border-l-4 border-green-300 pl-2">
-        4. Core Security Configuration
-      </span>
-    ),
+    title: "4. Core Security Configuration",
     content: (
       <div className="pt-4 pb-2 px-2 bg-white rounded">
         <StepBlock
