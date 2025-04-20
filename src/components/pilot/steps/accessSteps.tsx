@@ -59,7 +59,7 @@ export const createAccessSteps = (orgNumber: string, isSubmitted: boolean): Pilo
               
               <div className="mb-4">
                 <video 
-                  src="https://raw.githubusercontent.com/secureconnectdemo/images-and-giff/refs/heads/main/Cert.mp4" 
+                  src="https://github.com/secureconnectdemo/images-and-giff/raw/refs/heads/main/cert.mp4" 
                   controls 
                   loop 
                   autoPlay
