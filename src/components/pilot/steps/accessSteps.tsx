@@ -108,6 +108,20 @@ export const createAccessSteps = (orgNumber: string, isSubmitted: boolean): Pilo
                 </ul>
               </li>
 
+              <div className="mt-4 mb-4">
+                <video 
+                  src="https://github.com/secureconnectdemo/images-and-giff/raw/refs/heads/main/cert.mp4" 
+                  controls 
+                  loop 
+                  autoPlay
+                  muted
+                  className="w-1/2 mx-auto rounded-md shadow-sm"
+                  preload="metadata"
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+
               <li>
                 2. Install the Certificate
                 <ul className="ml-4 list-disc">
@@ -138,23 +152,10 @@ export const createAccessSteps = (orgNumber: string, isSubmitted: boolean): Pilo
                 </ul>
               </li>
             </ol>
-
-            <div className="mt-4 mb-4">
-              <video 
-                src="https://github.com/secureconnectdemo/images-and-giff/raw/refs/heads/main/cert.mp4" 
-                controls 
-                loop 
-                autoPlay
-                muted
-                className="w-1/2 mx-auto rounded-md shadow-sm"
-                preload="metadata"
-              >
-                Your browser does not support the video tag.
-              </video>
-            </div>
           </div>
         </div>
       </div>
     )
   }
 ];
+
