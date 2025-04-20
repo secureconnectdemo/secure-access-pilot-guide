@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { PilotStep } from '../types';
 import { getUrl, PATHS } from '../urlUtils';
@@ -63,7 +62,9 @@ export const createAccessSteps = (orgNumber: string, isSubmitted: boolean): Pilo
                   src="https://raw.githubusercontent.com/secureconnectdemo/images-and-giff/refs/heads/main/Cert.mp4" 
                   controls 
                   loop 
-                  className="w-full rounded-lg shadow-md"
+                  autoPlay
+                  muted
+                  className="w-3/4 mx-auto rounded-lg shadow-md"
                   preload="metadata"
                 >
                   Your browser does not support the video tag.
@@ -104,4 +105,3 @@ export const createAccessSteps = (orgNumber: string, isSubmitted: boolean): Pilo
     )
   }
 ];
-
