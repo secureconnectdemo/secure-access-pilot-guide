@@ -112,7 +112,19 @@ export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean
             <div className="font-bold mb-1">Steps:</div>
             <ol className="list-decimal ml-6 mt-1 space-y-1">
               <li>
-                Go to <span className="font-medium">Dashboard → Policies → Internet Access</span>
+                Go to <span className="font-medium">Dashboard → Policies → Internet Access</span>{" "}
+                {isSubmitted ? (
+                  <a
+                    href={`https://dashboard.sse.cisco.com/org/${orgNumber}/secure/policy`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-600 hover:underline ml-1"
+                  >
+                    (Open Dashboard)
+                  </a>
+                ) : (
+                  <span className="text-gray-400 ml-1">(Dashboard link locked)</span>
+                )}
               </li>
               <li>
                 Click <span className="font-medium">Add Rule</span>
