@@ -1,3 +1,4 @@
+
 import React, { useState, useRef } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -5,9 +6,10 @@ import { Card, CardHeader, CardContent } from '@/components/ui/card';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
 import { toast } from 'sonner';
 import { createPilotSteps } from './pilotStepsData';
-import { FileText, Download, Printer } from 'lucide-react';
+import { FileText, Download, Printer, Info } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import { AlertCircle } from 'lucide-react';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 import html2canvas from 'html2canvas';
 import jsPDF from 'jspdf';
 
@@ -84,12 +86,28 @@ const PilotPlan = () => {
             </p>
             
             {!isSubmitted && (
-              <Alert className="mb-4 bg-amber-50 border-amber-200">
-                <AlertCircle className="h-4 w-4 text-amber-600" />
-                <AlertTitle className="text-amber-800">Organization Number Required</AlertTitle>
-                <AlertDescription className="text-amber-700">
-                  Please enter your organization number to activate dashboard links and export options.
-                </AlertDescription>
+              <Alert className="mb-4 bg-amber-50 border-amber-200 flex items-start gap-2">
+                <AlertCircle className="h-4 w-4 text-amber-600 mt-1" />
+                <div>
+                  <AlertTitle className="text-amber-800">Organization Number Required</AlertTitle>
+                  <AlertDescription className="text-amber-700 flex items-center gap-1">
+                    Please enter your organization number to activate dashboard links and export options.
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Info className="h-4 w-4 text-amber-600 cursor-help" />
+                        </TooltipTrigger>
+                        <TooltipContent className="max-w-xs text-xs whitespace-pre-wrap bg-amber-50 text-amber-900 border border-amber-300 shadow">
+                          {`If you are familiar with the Org ID # Sign in to Secure Access.
+Check the URL in the browser's address bar: https://dashboard.sse.com/o/<orgId>/#/<page> where orgId is your unique Secure Access organization ID.
+Navigate to the name of your user account, and expand your username to view the organizations where the username is a member. Confirm that you are signed in to the correct Secure Access organization. Your organization name is listed under your account name.
+Click Switch Organizations to change to another Secure Access organization.
+Locate System Status—the overall health status of Secure Access.`}
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </AlertDescription>
+                </div>
               </Alert>
             )}
           </div>
