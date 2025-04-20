@@ -36,6 +36,16 @@ export const createSecuritySteps = (orgNumber: string, isSubmitted: boolean): Pi
           <li>Navigate to <span className="font-medium">Cisco Secure Client Settings &gt; DNS and Web Security</span>.</li>
           <li>Enable the <span className="font-medium">Web Security (port 80/443 traffic only)</span> toggle button.</li>
         </ol>
+        <div>
+          <a 
+            href={isSubmitted ? `https://dashboard.sse.cisco.com/org/${orgNumber}/connect/user-connectivity/internet-security` : '#'}
+            className={`text-blue-600 hover:underline block mt-2 ${!isSubmitted && 'pointer-events-none opacity-50'}`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Go to Traffic Steering / SWG (Full Proxy) Dashboard
+          </a>
+        </div>
       </div>
     )
   }
