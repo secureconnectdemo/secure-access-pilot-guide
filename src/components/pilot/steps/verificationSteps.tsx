@@ -16,15 +16,17 @@ export const createVerificationSteps = (orgNumber: string, isSubmitted: boolean)
           <ul className="ml-5 list-disc text-sm text-gray-700 space-y-2">
             <li>Verify that Secure Access is working correctly:</li>
             <li>
-              <span className="font-medium">Visit the Policy Test Page: </span>
-              <a 
-                href={TEST_POLICY_URL}
-                className="text-blue-600 hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Policy Test Page
-              </a>
+              <span className="font-medium">Visit the Policy Test Page</span>
+              <div>
+                <a 
+                  href={TEST_POLICY_URL}
+                  className="text-blue-600 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {TEST_POLICY_URL}
+                </a>
+              </div>
               <div className="ml-1 text-xs text-gray-500">Confirms policy enforcement and the Secure Access tunnel is active.</div>
             </li>
           </ul>
@@ -35,26 +37,30 @@ export const createVerificationSteps = (orgNumber: string, isSubmitted: boolean)
           <ul className="ml-5 list-disc text-sm text-gray-700 space-y-2">
             <li>Use safe, simulated test domains to trigger threat detections:</li>
             <li>
-              <span className="font-medium">Example Malware Domain:</span>{' '}
-              <a 
-                href={MALWARE_TEST_DOMAINS.example}
-                className="text-blue-600 hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {MALWARE_TEST_DOMAINS.example}
-              </a>
+              <span className="font-medium">Example Malware Domain</span>
+              <div>
+                <a 
+                  href={MALWARE_TEST_DOMAINS.example}
+                  className="text-blue-600 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {MALWARE_TEST_DOMAINS.example}
+                </a>
+              </div>
             </li>
             <li>
-              <span className="font-medium">Internet Bad Guys Test:</span>{' '}
-              <a
-                href={MALWARE_TEST_DOMAINS.badguys}
-                className="text-blue-600 hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {MALWARE_TEST_DOMAINS.badguys}
-              </a>
+              <span className="font-medium">Internet Bad Guys Test</span>
+              <div>
+                <a
+                  href={MALWARE_TEST_DOMAINS.badguys}
+                  className="text-blue-600 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {MALWARE_TEST_DOMAINS.badguys}
+                </a>
+              </div>
               <div className="ml-1 text-xs text-gray-500">This domain is flagged by Secure Access to validate threat protection.</div>
             </li>
           </ul>
@@ -75,7 +81,7 @@ export const createVerificationSteps = (orgNumber: string, isSubmitted: boolean)
               </a>
             </li>
             <li>Confirm that test traffic is being logged.</li>
-            <li>Check if policy actions (block, warn, allow) are applied correctly.</li>
+            <li>Check if policy actions (e.g., block, warn, allow) are applied correctly.</li>
             <li>Validate which rules triggered the response.</li>
           </ul>
         </div>
@@ -90,7 +96,7 @@ export const createVerificationSteps = (orgNumber: string, isSubmitted: boolean)
               <span className="font-medium">Schedule Daily Reports:</span>
               <ul className="ml-5 list-disc text-xs text-gray-600 space-y-1">
                 <li>Go to Secure &gt; Reports &gt; Threat Activity</li>
-                <li>Click "Schedule Report"</li>
+                <li>Click Schedule Report</li>
                 <li>Set frequency: Daily at 9:00 AM (recommended)</li>
                 <li>
                   Include:
@@ -102,7 +108,7 @@ export const createVerificationSteps = (orgNumber: string, isSubmitted: boolean)
               </ul>
             </li>
             <li>
-              <span className="font-medium">Run &amp; Review Reports:</span> Access the{' '}
+              <span className="font-medium">Run & Review Reports:</span> Access the{' '}
               <a
                 href={isSubmitted ? getUrl(orgNumber, PATHS.scheduledReports) : '#'}
                 className={`text-blue-600 hover:underline ${!isSubmitted && 'pointer-events-none opacity-50'}`}
@@ -124,4 +130,3 @@ export const createVerificationSteps = (orgNumber: string, isSubmitted: boolean)
     )
   }
 ];
-
