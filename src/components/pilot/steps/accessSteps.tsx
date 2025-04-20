@@ -64,7 +64,7 @@ export const createAccessSteps = (orgNumber: string, isSubmitted: boolean): Pilo
                   loop 
                   autoPlay
                   muted
-                  className="w-3/4 mx-auto rounded-lg shadow-md"
+                  className="w-1/2 mx-auto rounded-md shadow-sm"
                   preload="metadata"
                 >
                   Your browser does not support the video tag.
