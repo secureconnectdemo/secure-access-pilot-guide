@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { PilotStep } from '../types';
 import { getUrl, PATHS } from '../urlUtils';
@@ -21,6 +20,62 @@ export const createAccessSteps = (orgNumber: string, isSubmitted: boolean): Pilo
           >
             Secure Access Dashboard
           </a>
+        </CardSection>
+        
+        {/* New CardSection: Add an Additional Admin Account */}
+        <CardSection title="Add an Additional Admin">
+          <ol className="ml-4 list-decimal space-y-2 text-gray-700 text-sm">
+            <li>
+              <span className="font-medium">Navigate to the Admin Section:</span> <br />
+              From the left-hand navigation menu, click <span className="font-semibold">Admin</span>
+              <span className="ml-1 text-xs text-gray-500">(bottom icon with person symbol)</span>.
+            </li>
+            <li>
+              <span className="font-medium">Click “New” to Add a User:</span> <br />
+              On the top right of the Accounts panel, click the <span className="bg-gray-100 rounded px-1 py-0.5 border text-xs border-gray-300">+ New</span> button.
+            </li>
+            <li>
+              <span className="font-medium">Enter the User’s Email Address:</span> <br />
+              In the “Email” field, enter the email address of the user you want to add.
+            </li>
+            <li>
+              <span className="font-medium">Select a Role:</span>
+              <ul className="ml-6 mt-1 space-y-1 list-disc text-xs text-gray-600">
+                <li>
+                  <span className="font-semibold">Full Admin</span> – Full access to all features.
+                </li>
+                <li>
+                  <span className="font-semibold">Read Only</span> – Can view settings but cannot make changes.
+                </li>
+                <li>
+                  <span className="font-semibold">Security Administrator</span> – Can manage security-related settings (limited scope).
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span className="font-medium">Submit:</span> <br />
+              After selecting the appropriate role, click <span className="bg-gray-100 rounded px-1 py-0.5 border text-xs border-gray-300">Add</span> or <span className="bg-gray-100 rounded px-1 py-0.5 border text-xs border-gray-300">Save</span> (based on your interface).
+            </li>
+            <li>
+              <span className="font-medium">User Will Be Notified:</span> <br/>
+              If your org is SAML-enabled, the user will receive an email and can log in using SSO.
+            </li>
+          </ol>
+          <div className="flex items-start mt-3">
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <div className="flex items-center cursor-pointer">
+                    <Info className="w-4 h-4 text-blue-600 mr-2" />
+                    <span className="underline font-medium text-sm text-blue-700">Best Practice</span>
+                  </div>
+                </TooltipTrigger>
+                <TooltipContent className="max-w-xs">
+                  Always have at least <span className="font-semibold">2 Full Admins</span> added—preferably one being a personal account and one a shared/backup admin.
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </div>
         </CardSection>
 
         <CardSection title="Traffic Steering Configuration">
