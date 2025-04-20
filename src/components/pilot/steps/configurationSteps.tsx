@@ -118,7 +118,7 @@ export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean
     content: (
       <div className="space-y-8">
         {/* Content Filtering */}
-        <CardSection title="Content Filtering (Acceptable Use Policies)">
+        <CardSection title="Web Content Control">
           <div className="mb-2">
             <div className="font-bold mb-1">Steps:</div>
             <ol className="list-decimal ml-6 mt-1 space-y-1">
