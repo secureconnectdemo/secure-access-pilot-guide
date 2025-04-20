@@ -12,7 +12,7 @@ export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean
       <div className="space-y-5">
         <ul className="list-disc ml-6 text-[15px] space-y-4">
           <li>
-            <span className="font-medium">Recommended for early threat awareness and incident response validation.</span>
+            {/* Removed recommendation about early threat awareness and incident response validation as requested */}
           </li>
           <li>
             <span className="text-gray-500">See the previous phase for core configuration tasks: SWG, HTTPS Inspection, and Do Not Decrypt List settings.</span>
