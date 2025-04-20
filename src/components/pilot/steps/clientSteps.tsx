@@ -14,7 +14,7 @@ export const createClientSteps = (orgNumber: string, isSubmitted: boolean): Pilo
         <div className="mb-6">
           <h4 className="font-medium mb-3">Access Client Installation:</h4>
           <div className="space-y-2">
-            <p className="text-sm text-gray-600">1. Navigate to Connect > End-User Connectivity</p>
+            <p className="text-sm text-gray-600">1. Navigate to Connect {'>'}  End-User Connectivity</p>
             <p className="text-sm text-gray-600">2. Click "Cisco Secure Client" in top-right corner</p>
           </div>
         </div>
