@@ -62,6 +62,7 @@ export const createAccessSteps = (orgNumber: string, isSubmitted: boolean): Pilo
                 <video 
                   src="https://raw.githubusercontent.com/secureconnectdemo/images-and-giff/refs/heads/main/Cert.mp4" 
                   controls 
+                  loop 
                   className="w-full rounded-lg shadow-md"
                   preload="metadata"
                 >
@@ -103,3 +104,4 @@ export const createAccessSteps = (orgNumber: string, isSubmitted: boolean): Pilo
     )
   }
 ];
+
