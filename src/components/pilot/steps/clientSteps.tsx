@@ -22,6 +22,19 @@ export const createClientSteps = (orgNumber: string, isSubmitted: boolean): Pilo
                 <li>Navigate to Connect &gt; End-User Connectivity</li>
                 <li>Click "Cisco Secure Client" in top-right corner</li>
               </ul>
+              <div>
+                <a
+                  href={isSubmitted ? `https://dashboard.sse.cisco.com/org/${orgNumber}/connect/user-connectivity/internet-security` : '#'}
+                  className={`text-blue-600 hover:underline block mt-2 ${!isSubmitted && 'pointer-events-none opacity-50'}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Download Cisco Secure Client
+                </a>
+                <p className="text-xs text-gray-700 mt-1">
+                  The Cisco Secure Client protects computers, on and off the network.
+                </p>
+              </div>
             </li>
 
             <li>
@@ -106,4 +119,3 @@ export const createClientSteps = (orgNumber: string, isSubmitted: boolean): Pilo
     )
   }
 ];
-
