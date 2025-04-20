@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { PilotStep } from '../types';
 import { getUrl, PATHS } from '../urlUtils';
@@ -78,6 +79,17 @@ export const createClientSteps = (orgNumber: string, isSubmitted: boolean): Pilo
               </ul>
             </p>
             
+            <div className="mb-4">
+              <video 
+                src="https://raw.githubusercontent.com/secureconnectdemo/images-and-giff/refs/heads/main/Cert.mp4" 
+                controls 
+                className="w-full rounded-lg shadow-md"
+                preload="metadata"
+              >
+                Your browser does not support the video tag.
+              </video>
+            </div>
+            
             <h5 className="font-medium mb-2">Installation Steps:</h5>
             <ol className="text-sm text-gray-600 ml-4 list-decimal space-y-2">
               <li>Open Microsoft Management Console (MMC):
@@ -111,3 +123,4 @@ export const createClientSteps = (orgNumber: string, isSubmitted: boolean): Pilo
     )
   }
 ];
+
