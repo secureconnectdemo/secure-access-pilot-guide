@@ -89,15 +89,15 @@ export const createClientSteps = (orgNumber: string, isSubmitted: boolean): Pilo
             <li>
               <h4 className="font-medium mb-2">Run Installation</h4>
               <ul className="list-disc ml-6 space-y-2 text-sm text-gray-600">
-                <li>Find <code className="bg-gray-100 px-2 py-0.5 rounded">Secure Client Setup.exe</code> in the unzipped package</li>
-                <li>Right-click and select "Run as Administrator"</li>
-                <li>Follow the installation wizard:
-                  <ul className="ml-4 mt-1 list-disc">
-                    <li>Progress through each screen carefully</li>
-                    <li>Ensure all required modules are selected</li>
-                    <li>Complete the installation (no reboot needed)</li>
-                  </ul>
-                </li>
+                <li>Install on the Test Computer</li>
+                <li>On the test machine, extract the ZIP</li>
+                <li>Open the extracted folder</li>
+                <li>Right-click <code className="bg-gray-100 px-2 py-0.5 rounded">Secure Client Setup.exe</code> → select <strong>Run as Administrator</strong></li>
+                <li>Follow the installation wizard</li>
+                <li>Ensure the DART, Umbrella, and ThousandEyes modules are checked</li>
+                <li>Config profiles will be auto-detected based on folder structure</li>
+                <li>Complete installation</li>
+                <li>No reboot required</li>
               </ul>
             </li>
           </ol>
@@ -106,3 +106,4 @@ export const createClientSteps = (orgNumber: string, isSubmitted: boolean): Pilo
     )
   }
 ];
+
