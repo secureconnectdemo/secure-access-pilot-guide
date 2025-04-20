@@ -37,21 +37,38 @@ export const createSecuritySteps = (orgNumber: string, isSubmitted: boolean): Pi
           <li>Enable the <span className="font-medium">Web Security (port 80/443 traffic only)</span> toggle button.</li>
         </ol>
         <div>
+          <TooltipProvider>
+            <Tooltip>
+              <TooltipTrigger>
+                <a
+                  href={isSubmitted ? `https://dashboard.sse.cisco.com/org/${orgNumber}/connect/user-connectivity/internet-security` : '#'}
+                  className={`text-blue-600 hover:underline block mt-2 ${!isSubmitted ? 'pointer-events-none opacity-50' : ''}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Download Cisco Secure Client
+                </a>
+              </TooltipTrigger>
+              <TooltipContent className="max-w-xs">
+                <p>The Cisco Secure Client protects computers, on and off the network.</p>
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
           <a 
             href={isSubmitted ? `https://dashboard.sse.cisco.com/org/${orgNumber}/connect/user-connectivity/internet-security` : '#'}
-            className={`text-blue-600 hover:underline block mt-2 ${!isSubmitted && 'pointer-events-none opacity-50'}`}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Go to Traffic Steering / SWG (Full Proxy) Dashboard
-          </a>
-          <a 
-            href={isSubmitted ? `https://dashboard.sse.cisco.com/org/${orgNumber}/connect/user-connectivity/internet-security` : '#'}
-            className={`text-blue-600 hover:underline block mt-2 font-semibold ${!isSubmitted && 'pointer-events-none opacity-50'}`}
+            className={`text-blue-600 hover:underline block mt-2 font-semibold ${!isSubmitted ? 'pointer-events-none opacity-50' : ''}`}
             target="_blank"
             rel="noopener noreferrer"
           >
             Configure Cisco Secure Client Settings - Enable SWG (Full Proxy)
+          </a>
+          <a 
+            href={isSubmitted ? `https://dashboard.sse.cisco.com/org/${orgNumber}/connect/user-connectivity/internet-security` : '#'}
+            className={`text-blue-600 hover:underline block mt-2`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Go to Traffic Steering / SWG (Full Proxy) Dashboard
           </a>
         </div>
       </div>
