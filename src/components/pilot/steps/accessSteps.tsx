@@ -22,19 +22,47 @@ export const createAccessSteps = (orgNumber: string, isSubmitted: boolean): Pilo
           
           <div className="mb-6">
             <h4 className="font-medium mb-3">Traffic Steering Configuration:</h4>
-            <a 
-              href={isSubmitted ? getUrl(orgNumber, PATHS.trafficSteering) : '#'}
-              className={`text-blue-600 hover:underline block ${!isSubmitted && 'pointer-events-none opacity-50'}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Traffic Steering Settings
-            </a>
-            <ul className="text-sm text-gray-600 ml-4 space-y-1">
-              <li>• Add private/local domains to bypass Secure Access</li>
-              <li>• Configure internal resources exemptions</li>
-              <li>• Verify bypass behavior for local domains</li>
-            </ul>
+            <ol className="text-sm text-gray-600 ml-4 space-y-3">
+              <li>
+                1. Access Configuration Page
+                <ul className="ml-4 mt-1 space-y-1">
+                  <li>• Navigate to Traffic Steering Settings:
+                    <a 
+                      href={isSubmitted ? getUrl(orgNumber, PATHS.trafficSteering) : '#'}
+                      className={`text-blue-600 hover:underline ml-2 inline-block ${!isSubmitted && 'pointer-events-none opacity-50'}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Open Settings
+                    </a>
+                  </li>
+                </ul>
+              </li>
+              <li>
+                2. Configure Bypass Domains
+                <ul className="ml-4 mt-1 space-y-1">
+                  <li>• Add internal domains (e.g., *.corp.local)</li>
+                  <li>• Include private IP ranges (e.g., 192.168.0.0/16)</li>
+                  <li>• Add trusted cloud services if needed</li>
+                </ul>
+              </li>
+              <li>
+                3. Set Resource Exemptions
+                <ul className="ml-4 mt-1 space-y-1">
+                  <li>• Configure internal applications</li>
+                  <li>• Add specific URLs or IP addresses</li>
+                  <li>• Set exclusion rules for sensitive systems</li>
+                </ul>
+              </li>
+              <li>
+                4. Validate Configuration
+                <ul className="ml-4 mt-1 space-y-1">
+                  <li>• Test access to internal resources</li>
+                  <li>• Verify bypass rules are working</li>
+                  <li>• Confirm no disruption to local services</li>
+                </ul>
+              </li>
+            </ol>
           </div>
           
           <div className="mb-6">
