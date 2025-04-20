@@ -8,88 +8,120 @@ export const createVerificationSteps = (orgNumber: string, isSubmitted: boolean)
     id: 'verify-1',
     title: '3. Connection Verification and Reporting',
     content: (
-      <div className="space-y-4">
-        <div className="mb-6">
-          <h4 className="font-medium mb-3">Connection Testing:</h4>
-          <div className="space-y-2">
-            <p className="text-sm text-gray-600">Visit the Secure Access test page to confirm successful connection:</p>
-            <a 
-              href={TEST_POLICY_URL}
-              className="text-blue-600 hover:underline block"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Policy Test Page
-            </a>
-          </div>
+      <div className="space-y-7">
+        <h4 className="font-semibold text-green-700 text-lg">Connection Verification & Reporting</h4>
+
+        <div>
+          <h5 className="font-medium mb-1">1. Connection Testing</h5>
+          <ul className="ml-5 list-disc text-sm text-gray-700 space-y-2">
+            <li>Verify that Secure Access is working correctly:</li>
+            <li>
+              <span className="font-medium">Visit the Policy Test Page: </span>
+              <a 
+                href={TEST_POLICY_URL}
+                className="text-blue-600 hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Policy Test Page
+              </a>
+              <div className="ml-1 text-xs text-gray-500">Confirms policy enforcement and the Secure Access tunnel is active.</div>
+            </li>
+          </ul>
         </div>
 
-        <div className="mb-6">
-          <h4 className="font-medium mb-3">Test Traffic Generation:</h4>
-          <div className="space-y-2">
-            <p className="text-sm text-gray-600">Simulate threat detection using test domains:</p>
-            <a 
-              href={MALWARE_TEST_DOMAINS.example}
-              className="text-blue-600 hover:underline block"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Example Malware Domain
-            </a>
-            <a 
-              href={MALWARE_TEST_DOMAINS.badguys}
-              className="text-blue-600 hover:underline block"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Internet Bad Guys Test Domain
-            </a>
-          </div>
+        <div>
+          <h5 className="font-medium mb-1">2. Test Traffic Generation</h5>
+          <ul className="ml-5 list-disc text-sm text-gray-700 space-y-2">
+            <li>Use safe, simulated test domains to trigger threat detections:</li>
+            <li>
+              <span className="font-medium">Example Malware Domain:</span>{' '}
+              <a 
+                href={MALWARE_TEST_DOMAINS.example}
+                className="text-blue-600 hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {MALWARE_TEST_DOMAINS.example}
+              </a>
+            </li>
+            <li>
+              <span className="font-medium">Internet Bad Guys Test:</span>{' '}
+              <a
+                href={MALWARE_TEST_DOMAINS.badguys}
+                className="text-blue-600 hover:underline"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {MALWARE_TEST_DOMAINS.badguys}
+              </a>
+              <div className="ml-1 text-xs text-gray-500">This domain is flagged by Secure Access to validate threat protection.</div>
+            </li>
+          </ul>
         </div>
 
-        <div className="mb-6">
-          <h4 className="font-medium mb-3">Activity Monitoring:</h4>
-          <div className="space-y-2">
-            <a 
-              href={isSubmitted ? getUrl(orgNumber, PATHS.activityLogging) : '#'}
-              className={`text-blue-600 hover:underline block ${!isSubmitted && 'pointer-events-none opacity-50'}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Activity Search Dashboard
-            </a>
-            <p className="text-sm text-gray-600 ml-4">• Verify traffic recording and policy actions</p>
-          </div>
+        <div>
+          <h5 className="font-medium mb-1">3. Activity Monitoring</h5>
+          <ul className="ml-5 list-disc text-sm text-gray-700 space-y-1">
+            <li>
+              Navigate to the{' '}
+              <a
+                href={isSubmitted ? getUrl(orgNumber, PATHS.activityLogging) : '#'}
+                className={`text-blue-600 hover:underline ${!isSubmitted && 'pointer-events-none opacity-50'}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Activity Search Dashboard
+              </a>
+            </li>
+            <li>Confirm that test traffic is being logged.</li>
+            <li>Check if policy actions (block, warn, allow) are applied correctly.</li>
+            <li>Validate which rules triggered the response.</li>
+          </ul>
         </div>
 
-        <div className="mb-6">
-          <h4 className="font-medium mb-3">Threat Activity Reports:</h4>
-          <div className="space-y-2">
-            <a 
-              href={isSubmitted ? getUrl(orgNumber, PATHS.scheduledReports) : '#'}
-              className={`text-blue-600 hover:underline block ${!isSubmitted && 'pointer-events-none opacity-50'}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Schedule Reports
-            </a>
-            <ul className="text-sm text-gray-600 ml-4 space-y-1">
-              <li>• Create daily threat reports (9:00 AM recommended)</li>
-              <li>• Include all threats, even if not blocked</li>
-              <li>• Set up for early threat awareness</li>
-            </ul>
+        <div>
+          <h5 className="font-medium mb-1">4. Threat Activity Reporting</h5>
+          <div className="mb-1 ml-1">
+            <span className="font-medium">Automate threat visibility and share updates with your team:</span>
           </div>
-        </div>
-
-        <div className="mb-4">
-          <h4 className="font-medium mb-3">Run and Review Reports:</h4>
-          <ul className="text-sm text-gray-600 ml-4 space-y-1">
-            <li>• Review built-in dashboards</li>
-            <li>• Analyze threat, traffic, and user behavior</li>
-            <li>• Share insights with team members</li>
+          <ul className="ml-5 list-disc text-sm text-gray-700 space-y-1">
+            <li>
+              <span className="font-medium">Schedule Daily Reports:</span>
+              <ul className="ml-5 list-disc text-xs text-gray-600 space-y-1">
+                <li>Go to Secure &gt; Reports &gt; Threat Activity</li>
+                <li>Click "Schedule Report"</li>
+                <li>Set frequency: Daily at 9:00 AM (recommended)</li>
+                <li>
+                  Include:
+                  <ul className="ml-5 list-disc">
+                    <li>All threat types</li>
+                    <li>Blocked and allowed events (for full visibility)</li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <span className="font-medium">Run &amp; Review Reports:</span> Access the{' '}
+              <a
+                href={isSubmitted ? getUrl(orgNumber, PATHS.scheduledReports) : '#'}
+                className={`text-blue-600 hover:underline ${!isSubmitted && 'pointer-events-none opacity-50'}`}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Threat Reports Dashboard
+              </a>
+              <ul className="ml-5 list-disc text-xs text-gray-600 mt-1 space-y-1">
+                <li>Review Threat Types (Malware, Phishing, etc.)</li>
+                <li>Analyze Traffic Patterns (bytes transferred, destinations)</li>
+                <li>Monitor User behavior trends (frequent violators, risky activity)</li>
+              </ul>
+            </li>
+            <li>Share key insights with internal security or IT teams.</li>
           </ul>
         </div>
       </div>
     )
   }
 ];
+
