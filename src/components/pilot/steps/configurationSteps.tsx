@@ -138,7 +138,7 @@ export const createConfigurationSteps = (orgNumber: string, isSubmitted: boolean
   // Updated Content Filtering (Acceptable Use Policies) & Geolocation Blocking in same design
   {
     id: 'config-2',
-    title: '5.2. Content Filtering (Acceptable Use Policies)',
+    title: '6. Content Filtering (Acceptable Use Policies)',
     content: (
       <div className="space-y-8">
         {/* Content Filtering */}
