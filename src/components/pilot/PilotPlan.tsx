@@ -43,15 +43,7 @@ const PilotPlan = () => {
             <p className="text-[#212529] mb-4">
               This Secure Access Pilot Plan provides a structured approach to deploying Cisco Secure Access (SSE/SWG) in a typical enterprise environment.
             </p>
-        
-            <p className="text-[#212529] mb-4">
-              These steps follow a logical, sequential order based on key requirements, dependencies, and best practices. The list has been intentionally designed to be simple, clear, and actionable—helping you realize value quickly and efficiently.
-            </p>
             
-            <p className="text-[#212529] mb-4">
-              Most configurations can be completed directly within the Secure Access dashboard. More advanced deployments and features will be covered in a follow-up Adoption Pilot Plan.
-            </p>
-
             {!isSubmitted && (
               <Alert className="mb-4 bg-amber-50 border-amber-200 flex items-start gap-2">
                 <AlertCircle className="h-4 w-4 text-amber-600 mt-1" />
