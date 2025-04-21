@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { PilotStep } from '../types';
 import { getUrl, PATHS } from '../urlUtils';
@@ -31,14 +30,21 @@ export const createAccessSteps = (orgNumber: string, isSubmitted: boolean): Pilo
         <CardSection title="Add an Additional Admin">
           <ol className="ml-4 list-decimal space-y-2 text-gray-700 text-sm">
             <li>
-              <span className="font-medium">Navigate to Admin &gt; Accounts and click New.</span> <br />
-              <a 
-                href="https://docs.sse.cisco.com/sse-user-guide/docs/add-a-new-account" 
-                target="_blank" 
+              <span className="font-medium">
+                Navigate to Admin &gt; Accounts and click New.
+              </span>
+              <br />
+              <a
+                href={
+                  isSubmitted
+                    ? `https://dashboard.sse.cisco.com/org/${orgNumber}/admin/accounts`
+                    : '#'
+                }
+                className={`text-blue-600 hover:underline ${!isSubmitted && 'pointer-events-none opacity-50'}`}
+                target="_blank"
                 rel="noopener noreferrer"
-                className="text-blue-600 hover:underline"
               >
-                See Official Documentation
+                Open in Dashboard
               </a>
             </li>
             <li>

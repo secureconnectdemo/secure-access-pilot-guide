@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { PilotStep } from '../types';
 import { getUrl, PATHS, TEST_POLICY_URL, MALWARE_TEST_DOMAINS } from '../urlUtils';
@@ -64,14 +63,19 @@ export const createVerificationSteps = (orgNumber: string, isSubmitted: boolean)
         <CardSection title="Activity Monitoring">
           <ul className="ml-5 list-disc text-sm text-gray-700 space-y-1">
             <li>
-              Navigate to the{' '}
+              Navigate to{' '}
+              <span className="font-medium">Monitor &gt; Reports &gt; Activity Search.</span>{' '}
               <a
-                href={isSubmitted ? getUrl(orgNumber, PATHS.activityLogging) : '#'}
+                href={
+                  isSubmitted
+                    ? `https://dashboard.sse.cisco.com/org/${orgNumber}/reports/activity`
+                    : '#'
+                }
                 className={`text-blue-600 hover:underline ${!isSubmitted && 'pointer-events-none opacity-50'}`}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Activity Search Dashboard
+                (Open in Dashboard)
               </a>
             </li>
             <li>Confirm that test traffic is being logged.</li>
