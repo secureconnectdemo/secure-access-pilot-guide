@@ -36,42 +36,21 @@ const PilotPlan = () => {
             <div className="flex items-center gap-2 mb-4">
               <Clock className="h-5 w-5 text-[#003366]" />
               <p className="text-sm text-gray-600">
-                Estimated Time: 45-60 minutes
+                Estimated Setup Time: 45-60 minutes (1-2 test machines)
               </p>
             </div>
 
             <p className="text-[#212529] mb-4">
-              This Secure Access Pilot Plan provides a structured approach to deploying Cisco Secure Access in a typical enterprise environment.
+              This Secure Access Pilot Plan provides a structured approach to deploying Cisco Secure Access (SSE/SWG) in a typical enterprise environment.
             </p>
-
-            <div className="bg-blue-50 border border-blue-200 p-4 rounded-md mb-4">
-              <div className="flex items-start">
-                <div className="mr-3">🔐</div>
-                <div>
-                  <h3 className="font-semibold text-blue-800 mb-2">Quick Deployment Guide</h3>
-                  <div className="flex items-center gap-2">
-                    <p className="text-blue-700 text-sm mb-2">
-                      Rapidly implement Cisco Secure Access with our streamlined pilot plan.
-                    </p>
-                    <TooltipProvider>
-                      <Tooltip>
-                        <TooltipTrigger asChild>
-                          <Info className="h-4 w-4 text-blue-500 cursor-help" />
-                        </TooltipTrigger>
-                        <TooltipContent className="max-w-xs bg-blue-50 text-blue-700 border border-blue-200">
-                          These steps follow a logical, sequential order based on key requirements, dependencies, and best practices. The list has been intentionally designed to be simple, clear, and actionable—helping you realize value quickly and efficiently. Most configurations can be completed directly within the Secure Access dashboard. More advanced deployments and features will be covered in a follow-up Adoption Pilot Plan.
-                        </TooltipContent>
-                      </Tooltip>
-                    </TooltipProvider>
-                  </div>
-                  <ul className="list-disc list-inside text-blue-700 text-sm space-y-1">
-                    <li>Test Environment: 1-2 Windows machines (Admin rights)</li>
-                    <li>Follow steps sequentially in the Secure Access dashboard</li>
-                    <li>Advanced features covered in future Adoption Plan</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
+        
+            <p className="text-[#212529] mb-4">
+              These steps follow a logical, sequential order based on key requirements, dependencies, and best practices. The list has been intentionally designed to be simple, clear, and actionable—helping you realize value quickly and efficiently.
+            </p>
+            
+            <p className="text-[#212529] mb-4">
+              Most configurations can be completed directly within the Secure Access dashboard. More advanced deployments and features will be covered in a follow-up Adoption Pilot Plan.
+            </p>
 
             {!isSubmitted && (
               <Alert className="mb-4 bg-amber-50 border-amber-200 flex items-start gap-2">
@@ -95,16 +74,16 @@ const PilotPlan = () => {
               </Alert>
             )}
 
-            {isSubmitted && (
-              <Alert className="mb-4 bg-green-50 border-green-200 flex items-start gap-2">
-                <div>
-                  <AlertTitle className="text-green-800">Thank you!</AlertTitle>
-                  <AlertDescription className="text-green-700">
-                    Your organization number has been added. You can now begin navigating through the setup steps—each link has been customized to work directly with your Secure Access dashboard.
-                  </AlertDescription>
-                </div>
-              </Alert>
-            )}
+      {isSubmitted && (
+        <Alert className="mb-4 bg-green-50 border-green-200 flex items-start gap-2">
+          <div>
+            <AlertTitle className="text-green-800">Thank you!</AlertTitle>
+            <AlertDescription className="text-green-700">
+              Your organization number has been added. You can now begin navigating through the setup steps—each link has been customized to work directly with your Secure Access dashboard.
+            </AlertDescription>
+          </div>
+        </Alert>
+      )}
 
             <form onSubmit={handleSubmit} className="flex gap-4 items-start mb-6">
               <div className="flex-grow">
