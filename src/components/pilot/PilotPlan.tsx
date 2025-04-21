@@ -110,7 +110,7 @@ const PilotPlan = () => {
 
       <CardFooter className="bg-[#003366] text-white p-4 rounded-b-lg">
         <p className="text-sm">
-          For any questions or feedback, contact: josfonse@cisco.com - Sr Customer Success Manager for Secure Access
+          For any questions or feedback, contact: josfonse@cisco.com
         </p>
       </CardFooter>
     </Card>
