@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { PilotStep } from '../types';
 import { getUrl, PATHS } from '../urlUtils';
@@ -26,17 +27,19 @@ export const createAccessSteps = (orgNumber: string, isSubmitted: boolean): Pilo
           </a>
         </CardSection>
         
-        {/* New CardSection: Add an Additional Admin Account */}
+        {/* Revised CardSection: Add an Additional Admin Account */}
         <CardSection title="Add an Additional Admin">
           <ol className="ml-4 list-decimal space-y-2 text-gray-700 text-sm">
             <li>
-              <span className="font-medium">Navigate to the Admin Section:</span> <br />
-              From the left-hand navigation menu, click <span className="font-semibold">Admin</span>
-              <span className="ml-1 text-xs text-gray-500">(bottom icon with person symbol)</span>.
-            </li>
-            <li>
-              <span className="font-medium">Click “New” to Add a User:</span> <br />
-              On the top right of the Accounts panel, click the <span className="bg-gray-100 rounded px-1 py-0.5 border text-xs border-gray-300">+ New</span> button.
+              <span className="font-medium">Navigate to Admin &gt; Accounts and click New.</span> <br />
+              <a 
+                href="https://docs.sse.cisco.com/sse-user-guide/docs/add-a-new-account" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:underline"
+              >
+                See Official Documentation
+              </a>
             </li>
             <li>
               <span className="font-medium">Enter the User’s Email Address:</span> <br />
