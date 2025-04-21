@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { PilotStep } from '../types';
 import { 
@@ -147,6 +146,40 @@ export const createNextSteps = (): PilotStep[] => [
                     </ul>
                   </TableCell>
                   <TableCell>iOS and Android devices</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">
+                    <div className="flex items-center gap-2">
+                      <FileBox className="h-5 w-5 text-blue-600" />
+                      PAC Files
+                    </div>
+                  </TableCell>
+                  <TableCell>To enforce web security through browser-based traffic redirection without client installation</TableCell>
+                  <TableCell>
+                    <ul className="list-disc pl-4 space-y-1">
+                      <li>Web Security (SWG) only</li>
+                      <li>No DNS Security</li>
+                      <li>Browser-based protection via proxy</li>
+                    </ul>
+                  </TableCell>
+                  <TableCell>Any device with a web browser (Windows, macOS, Linux, mobile devices)</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">
+                    <div className="flex items-center gap-2">
+                      <Shield className="h-5 w-5 text-blue-600" />
+                      Remote Access VPN (RAVPN)
+                    </div>
+                  </TableCell>
+                  <TableCell>For secure, full-tunnel remote access to Secure Access with full inspection and enforcement</TableCell>
+                  <TableCell>
+                    <ul className="list-disc pl-4 space-y-1">
+                      <li>Full Secure Access stack</li>
+                      <li>Full traffic forwarding and policy support</li>
+                      <li>DNS Security, SWG, IPS, DLP, Experience Insights (where supported)</li>
+                    </ul>
+                  </TableCell>
+                  <TableCell>All supported client platforms</TableCell>
                 </TableRow>
               </TableBody>
             </Table>
