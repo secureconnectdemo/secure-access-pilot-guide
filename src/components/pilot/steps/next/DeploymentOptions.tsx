@@ -5,7 +5,7 @@ import DeploymentOptionsTable from './DeploymentOptionsTable';
 
 const DeploymentOptions = () => {
   return (
-    <CardSection title="Alternative Deployment Options to Consider">
+    <CardSection title="Flexible Deployment Models for Diverse Environments (Not Covered in This Pilot)">
       <div className="space-y-4">
         <div className="text-left">
           <p className="text-gray-700 text-sm leading-relaxed mb-2">
