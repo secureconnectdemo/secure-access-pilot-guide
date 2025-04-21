@@ -64,7 +64,7 @@ export const createNextSteps = (): PilotStep[] => [
           </div>
         </CardSection>
 
-        <CardSection title="Alternative Deployment Models">
+        <CardSection title="Alternative Deployment Options to Consider">
           <div className="space-y-4">
             <p className="text-gray-700 mb-4">
               Cisco Secure Access supports multiple deployment models to scale coverage across diverse environments and provide appropriate protection based on device type, use case, and security requirements.
