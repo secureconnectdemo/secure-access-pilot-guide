@@ -8,6 +8,7 @@ import { createSecuritySteps } from './steps/securitySteps';
 import { createConfigurationSteps } from './steps/configurationSteps';
 import { createAdditionalSteps } from './steps/additionalSteps';
 import { createNextSteps } from './steps/nextSteps';
+import { createDeploymentOptionsStep } from './steps/deploymentOptionsStep';
 
 export const createPilotSteps = (orgNumber: string, isSubmitted: boolean): PilotStep[] => [
   ...createAccessSteps(orgNumber, isSubmitted),
@@ -16,5 +17,6 @@ export const createPilotSteps = (orgNumber: string, isSubmitted: boolean): Pilot
   ...createSecuritySteps(orgNumber, isSubmitted),
   ...createConfigurationSteps(orgNumber, isSubmitted),
   ...createAdditionalSteps(orgNumber, isSubmitted),
+  ...createDeploymentOptionsStep(),
   ...createNextSteps()
 ];

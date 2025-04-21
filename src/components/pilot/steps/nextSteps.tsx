@@ -3,7 +3,6 @@ import React from 'react';
 import { PilotStep } from '../types';
 import CongratulationsCard from './next/CongratulationsCard';
 import NextFocusAreas from './next/NextFocusAreas';
-import DeploymentOptions from './next/DeploymentOptions';
 
 export const createNextSteps = (): PilotStep[] => [
   {
@@ -13,7 +12,6 @@ export const createNextSteps = (): PilotStep[] => [
       <div className="space-y-6">
         <CongratulationsCard />
         <NextFocusAreas />
-        <DeploymentOptions />
       </div>
     )
   }
