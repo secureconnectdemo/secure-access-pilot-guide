@@ -12,7 +12,7 @@ const focusItems = [
   {
     icon: ShieldCheck,
     title: "Activate Advanced Security Capabilities",
-    description: "Enable advanced protections like DLP, IPS, and HTTPS Decryption"
+    description: "Enable advanced protections like DLP, IPS, and Decryption"
   },
   {
     icon: Activity,
