@@ -42,7 +42,7 @@ const PilotPlan = () => {
             </div>
 
             <p className="text-[#212529] mb-4">
-              This Secure Access Pilot Plan offers a clear, step-by-step path for deploying Cisco Secure Access (SIA), following best practices and key setup requirements.
+              This Secure Access Pilot Plan provides a streamlined, step-by-step approach to deploying Cisco Secure Access (SIA), aligned with best practices and key requirements. Most configurations can be completed directly in the dashboard, with advanced deployments covered in the follow-up Adoption Pilot Plan.
             </p>
 
             {!isSubmitted && (
