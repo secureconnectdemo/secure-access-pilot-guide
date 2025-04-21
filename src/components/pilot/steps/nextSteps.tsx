@@ -9,9 +9,14 @@ import {
   ShieldCheck,
   Layers,
   FileBox,
-  Check
+  Server,
+  Network,
+  Smartphone,
+  Database,
+  Router
 } from 'lucide-react';
 import CardSection from './CardSection';
+import { Table, TableHeader, TableRow, TableHead, TableBody, TableCell } from '@/components/ui/table';
 
 export const createNextSteps = (): PilotStep[] => [
   {
@@ -61,22 +66,99 @@ export const createNextSteps = (): PilotStep[] => [
         </CardSection>
 
         <CardSection title="Alternative Deployment Models">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            {[
-              { icon: Shield, text: "IPsec tunnels" },
-              { icon: Layers, text: "Virtual appliances" },
-              { icon: ShieldCheck, text: "Network protection" },
-              { icon: FileBox, text: "Cisco Secure Client for mobile devices" }
-            ].map((item, index) => (
-              <div key={index} className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg">
-                <item.icon className="h-5 w-5 text-gray-600 flex-shrink-0" />
-                <span className="text-gray-700">{item.text}</span>
-              </div>
-            ))}
+          <div className="space-y-4">
+            <p className="text-gray-700 mb-4">
+              Cisco Secure Access supports multiple deployment models to scale coverage across diverse environments and provide appropriate protection based on device type, use case, and security requirements.
+            </p>
+            
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Model</TableHead>
+                  <TableHead>When to Use</TableHead>
+                  <TableHead>Key Features</TableHead>
+                  <TableHead>Supported Devices</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="font-medium">
+                    <div className="flex items-center gap-2">
+                      <Router className="h-5 w-5 text-blue-600" />
+                      IPsec Tunnels
+                    </div>
+                  </TableCell>
+                  <TableCell>Connect on-prem data centers, branch offices, or private applications</TableCell>
+                  <TableCell>
+                    <ul className="list-disc pl-4 space-y-1">
+                      <li>Full Secure Access stack</li>
+                      <li>Full traffic forwarding</li>
+                      <li>BGP and ECMP routing</li>
+                    </ul>
+                  </TableCell>
+                  <TableCell>Routers, Firewalls, AWS Transit Gateway</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">
+                    <div className="flex items-center gap-2">
+                      <Server className="h-5 w-5 text-blue-600" />
+                      Virtual Appliances
+                    </div>
+                  </TableCell>
+                  <TableCell>DNS-based protection and IP/user attribution</TableCell>
+                  <TableCell>
+                    <ul className="list-disc pl-4 space-y-1">
+                      <li>DNS Security</li>
+                      <li>Source IP capture</li>
+                      <li>Custom routing</li>
+                    </ul>
+                  </TableCell>
+                  <TableCell>ESXi, KVM, Hyper-V, AWS EC2, Azure VM</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">
+                    <div className="flex items-center gap-2">
+                      <Shield className="h-5 w-5 text-blue-600" />
+                      Network Protection
+                    </div>
+                  </TableCell>
+                  <TableCell>DNS security for non-Windows/macOS devices</TableCell>
+                  <TableCell>
+                    <ul className="list-disc pl-4 space-y-1">
+                      <li>DNS-layer security</li>
+                      <li>Content filtering</li>
+                      <li>Basic visibility</li>
+                    </ul>
+                  </TableCell>
+                  <TableCell>IoT devices, printers, Linux machines, servers</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="font-medium">
+                    <div className="flex items-center gap-2">
+                      <Smartphone className="h-5 w-5 text-blue-600" />
+                      Cisco Secure Client
+                    </div>
+                  </TableCell>
+                  <TableCell>Mobile device security with DNS-level protection</TableCell>
+                  <TableCell>
+                    <ul className="list-disc pl-4 space-y-1">
+                      <li>DNS Security</li>
+                      <li>Policy enforcement</li>
+                    </ul>
+                  </TableCell>
+                  <TableCell>iOS and Android devices</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+
+            <div className="mt-4 bg-blue-50 p-4 rounded-lg">
+              <p className="text-blue-800 text-sm">
+                These deployment options can be mixed and matched to meet operational, geographic, and user-specific needs while maintaining consistent security policies across all environments.
+              </p>
+            </div>
           </div>
         </CardSection>
       </div>
     )
   }
 ];
-
