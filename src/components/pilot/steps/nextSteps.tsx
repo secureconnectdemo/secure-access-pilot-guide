@@ -109,7 +109,6 @@ export const createNextSteps = (): PilotStep[] => [
                     <ul className="list-disc pl-4 space-y-1">
                       <li>DNS Security</li>
                       <li>Source IP capture</li>
-                      <li>Custom routing</li>
                     </ul>
                   </TableCell>
                   <TableCell>ESXi, KVM, Hyper-V, AWS EC2, Azure VM</TableCell>
