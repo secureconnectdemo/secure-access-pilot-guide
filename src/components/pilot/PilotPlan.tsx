@@ -6,7 +6,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { toast } from 'sonner';
 import { createPilotSteps } from './pilotStepsData';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { AlertCircle, Clock, Info, ExternalLink } from 'lucide-react';
+import { AlertCircle, Clock, Info } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 const PilotPlan = () => {
@@ -116,22 +116,9 @@ const PilotPlan = () => {
         </Accordion>
       </CardContent>
 
-      <CardFooter className="bg-[#003366] text-white p-4 rounded-b-lg flex flex-col">
-        <div className="flex justify-between items-center w-full">
-          <p className="text-sm">
-            For any questions or feedback, contact: josfonse@cisco.com - Sr Customer Success Manager for Secure Access
-          </p>
-          <a 
-            href="https://mycase.cloudapps.cisco.com/case" 
-            target="_blank" 
-            rel="noopener noreferrer" 
-            className="flex items-center gap-2 text-sm hover:underline"
-          >
-            Open Cisco TAC Case <ExternalLink className="h-4 w-4" />
-          </a>
-        </div>
-        <p className="text-xs mt-2 text-gray-300">
-          If you encounter any technical issues, please open a case with Cisco TAC, available 24/7
+      <CardFooter className="bg-[#003366] text-white p-4 rounded-b-lg">
+        <p className="text-sm">
+          For any questions or feedback, contact: josfonse@cisco.com - Sr Customer Success Manager for Secure Access
         </p>
       </CardFooter>
     </Card>
