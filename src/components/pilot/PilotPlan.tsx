@@ -7,7 +7,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { toast } from 'sonner';
 import { createPilotSteps } from './pilotStepsData';
 import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
-import { AlertCircle, Info } from 'lucide-react';
+import { AlertCircle, Clock, Info } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 const PilotPlan = () => {
@@ -34,6 +34,13 @@ const PilotPlan = () => {
         
         <div className="flex justify-between items-start mt-4 mb-4">
           <div className="flex-grow">
+            <div className="flex items-center gap-2 mb-4">
+              <Clock className="h-5 w-5 text-[#003366]" />
+              <p className="text-sm text-gray-600">
+                Estimated Setup Time: 45-60 minutes (1-2 test machines)
+              </p>
+            </div>
+
             <p className="text-[#212529] mb-4">
               This Secure Access Pilot Plan provides a structured approach to deploying Cisco Secure Access (SSE/SWG) in a typical enterprise environment.
             </p>
@@ -116,3 +123,4 @@ const PilotPlan = () => {
 };
 
 export default PilotPlan;
+
