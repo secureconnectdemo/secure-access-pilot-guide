@@ -36,7 +36,7 @@ const PilotPlan = () => {
             <div className="flex items-center gap-2 mb-4">
               <Clock className="h-5 w-5 text-[#003366]" />
               <p className="text-sm text-gray-600">
-                Estimated Setup Time: 45-60 minutes (1-2 test machines)
+                Estimated Setup Time: 45-60 minutes (1-2 test windows machines)
               </p>
             </div>
 
