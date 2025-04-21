@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React from "react";
 import { PilotStep } from './types';
 import { createAccessSteps } from './steps/accessSteps';
 import { createClientSteps } from './steps/clientSteps';
@@ -17,6 +17,6 @@ export const createPilotSteps = (orgNumber: string, isSubmitted: boolean): Pilot
   ...createSecuritySteps(orgNumber, isSubmitted),
   ...createConfigurationSteps(orgNumber, isSubmitted),
   ...createAdditionalSteps(orgNumber, isSubmitted),
-  ...createDeploymentOptionsStep(),
-  ...createNextSteps()
+  ...createNextSteps(),
+  ...createDeploymentOptionsStep()
 ];
