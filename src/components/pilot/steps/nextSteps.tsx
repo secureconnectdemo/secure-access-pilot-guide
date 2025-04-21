@@ -49,7 +49,7 @@ export const createNextSteps = (): PilotStep[] => [
                 { icon: Layers, text: "Scaling to more users by rolling out the Secure Client at scale" },
                 { icon: Shield, text: "Expanding policy enforcement to additional sites or user groups" },
                 { icon: Activity, text: "Enhancing visibility with logging, reporting, and telemetry" },
-                { icon: Globe, text: "Integrating with Cisco platforms like Duo, ISE, and SD-WAN" }
+                { icon: Globe, text: "Integrating with Cisco platforms like Duo, ISE, and XDR, Catalyst SD-WAN" }
               ].map((item, index) => (
                 <li key={index} className="flex items-center gap-3">
                   <item.icon className="h-5 w-5 text-blue-600 flex-shrink-0" />
