@@ -7,7 +7,7 @@ import NextFocusAreas from './next/NextFocusAreas';
 export const createNextSteps = (): PilotStep[] => [
   {
     id: 'whats-next',
-    title: "What's Next: Continued Adoption & Optimization",
+    title: "Next Focus Areas: Continue Your Secure Access Journey",
     content: (
       <div className="space-y-6">
         <CongratulationsCard />
@@ -16,3 +16,5 @@ export const createNextSteps = (): PilotStep[] => [
     )
   }
 ];
+
+export default createNextSteps;
