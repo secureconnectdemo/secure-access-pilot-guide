@@ -60,6 +60,21 @@ const PilotPlan = () => {
               </Alert>
             )}
 
+            {isSubmitted && (
+              <Alert className="mb-4 bg-green-50 border-green-200 flex items-start gap-2">
+                <div>
+                  <AlertTitle className="text-green-800">Thank you!</AlertTitle>
+                  <AlertDescription className="text-green-700">
+                    Your organization number has been added. You can now begin navigating through the setup steps—each link has been customized to work directly with your Secure Access dashboard.
+                    <br /><br />
+                    These steps follow a logical, sequential order based on key requirements, dependencies, and best practices. The list has been intentionally designed to be simple, clear, and actionable—helping you realize value quickly and efficiently.
+                    <br /><br />
+                    Most configurations can be completed directly within the Secure Access dashboard. More advanced deployments and features will be covered in a follow-up Adoption Pilot Plan.
+                  </AlertDescription>
+                </div>
+              </Alert>
+            )}
+
             <form onSubmit={handleSubmit} className="flex gap-4 items-start mb-6">
               <div className="flex-grow">
                 <Input
