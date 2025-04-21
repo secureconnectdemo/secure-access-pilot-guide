@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -50,9 +49,21 @@ const PilotPlan = () => {
                 <div className="mr-3">🔐</div>
                 <div>
                   <h3 className="font-semibold text-blue-800 mb-2">Quick Deployment Guide</h3>
-                  <p className="text-blue-700 text-sm mb-2">
-                    Rapidly implement Cisco Secure Access with our streamlined pilot plan.
-                  </p>
+                  <div className="flex items-center gap-2">
+                    <p className="text-blue-700 text-sm mb-2">
+                      Rapidly implement Cisco Secure Access with our streamlined pilot plan.
+                    </p>
+                    <TooltipProvider>
+                      <Tooltip>
+                        <TooltipTrigger asChild>
+                          <Info className="h-4 w-4 text-blue-500 cursor-help" />
+                        </TooltipTrigger>
+                        <TooltipContent className="max-w-xs bg-blue-50 text-blue-700 border border-blue-200">
+                          These steps follow a logical, sequential order based on key requirements, dependencies, and best practices. The list has been intentionally designed to be simple, clear, and actionable—helping you realize value quickly and efficiently. Most configurations can be completed directly within the Secure Access dashboard. More advanced deployments and features will be covered in a follow-up Adoption Pilot Plan.
+                        </TooltipContent>
+                      </Tooltip>
+                    </TooltipProvider>
+                  </div>
                   <ul className="list-disc list-inside text-blue-700 text-sm space-y-1">
                     <li>Test Environment: 1-2 Windows machines (Admin rights)</li>
                     <li>Follow steps sequentially in the Secure Access dashboard</li>
@@ -136,4 +147,3 @@ const PilotPlan = () => {
 };
 
 export default PilotPlan;
-
