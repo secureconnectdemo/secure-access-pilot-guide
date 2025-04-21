@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
@@ -41,7 +42,7 @@ const PilotPlan = () => {
             </div>
 
             <p className="text-[#212529] mb-4">
-              This Secure Access Pilot Plan provides a streamlined, step-by-step approach to deploying Cisco Secure Access (SIA), guided by best practices and key requirements. Most configurations are completed directly in the dashboard, with advanced deployments addressed in the follow-up Adoption Pilot Plan.
+              This Secure Access Pilot Plan provides a streamlined, step-by-step approach to deploying Cisco Secure Access (SIA), aligned with best practices and key requirements. Most configurations can be completed directly in the dashboard, with advanced deployments covered in the follow-up Adoption Pilot Plan.
             </p>
 
             {!isSubmitted && (
