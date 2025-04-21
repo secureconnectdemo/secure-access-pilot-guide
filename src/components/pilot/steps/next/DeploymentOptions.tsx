@@ -11,11 +11,8 @@ const DeploymentOptions = () => {
           <p className="text-gray-700 text-sm leading-relaxed mb-2">
             The pilot uses a deployment model that enables the full Secure Access stack through a unified client, making it easy to roll out, test, and validate core capabilities in just a few minutes.
           </p>
-          <p className="text-gray-700 text-sm leading-relaxed mb-2">
-            Beyond the pilot, for additional use cases, scenarios, and unique environments, Cisco Secure Access supports a variety of deployment models designed to scale coverage across diverse environments while applying the appropriate level of protection based on device type, user role, and security requirements.
-          </p>
           <p className="text-gray-700 text-sm leading-relaxed mb-4">
-            These flexible options empower organizations to extend protection beyond traditional endpoints, enabling coverage for remote users, unmanaged devices, branch offices, and cloud workloads—all managed through a centralized policy framework.
+            These models are designed to complement the Unified Client and provide additional options for securing devices and environments that require alternative methods of protection.
           </p>
         </div>
         
