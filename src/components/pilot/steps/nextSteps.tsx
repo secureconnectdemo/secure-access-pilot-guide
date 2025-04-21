@@ -65,7 +65,7 @@ export const createNextSteps = (): PilotStep[] => [
             {[
               { icon: Shield, text: "IPsec tunnels" },
               { icon: Layers, text: "Virtual appliances" },
-              { icon: ShieldCheck, text: "Network protection layers" },
+              { icon: ShieldCheck, text: "Network protection" },
               { icon: FileBox, text: "Cisco Secure Client for mobile devices" }
             ].map((item, index) => (
               <div key={index} className="flex items-center gap-2 p-3 bg-gray-50 rounded-lg">
@@ -79,3 +79,4 @@ export const createNextSteps = (): PilotStep[] => [
     )
   }
 ];
+
